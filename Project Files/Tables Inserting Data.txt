@@ -2,7 +2,7 @@ select * from im_indents_products;select * from im_hsn_code;
 
 select * from im_Products_Category;
 
-inaert into im_hsn_code(hsn_code,gst)
+insert into im_hsn_code(hsn_code,gst)
 select 181818, 18 union all
 select 282828, 28 union all
 select 000000, 0 union all
@@ -55,7 +55,7 @@ select 62,'Allen solly Women Ware','Select the sports and the shoe',707,121212,'
 select 63,'Allen SollyKids ware','Get the whole kit',707,121212,'Regular',10,5,'Active','Admin',current_date ;
 
 
-select * from im_products
+select * from im_products;
 
 
 
@@ -93,7 +93,7 @@ VALUES
 (63, 1, 90, 800.00, 600.00, 700.00, 'Admin', CURRENT_DATE);
 
 
-select * from im_products_stock
+select * from im_products_stock;
 
 
 Insert into im_Vendor (Vendor_ID ,Vendor_Name ,Vendor_Address ,Vendor_PhoneNumber ,Status ,User_ID,Last_Updated_User,Last_Updated_Date)
@@ -246,15 +246,7 @@ select 3014, date(now()), 5007,50000,'Active', 'Admin', CURRENT_DATE;
 
 select * from im_grn;
 
-ALTER TABLE im_grn_products 
-rename COLUMN gst to hsn_code;
-
-ALTER TABLE im_grn_products 
-ALTER COLUMN hsn_code TYPE int;
- 
-
-
-insert into im_GRN_Products (Grn_ID ,Product_ID ,Batch_NO ,Quantity,Price,Gst ,Bonus,Last_Updated_User,Last_Updated_Date)
+insert into im_GRN_Products (Grn_ID ,Product_ID ,Batch_NO ,Quantity,Price,hsn_code,Bonus,Last_Updated_User,Last_Updated_Date)
 select 3001,01,8123,5,49000,181818,0, 'Admin', CURRENT_DATE union all 
 select 3001,02,8234,5,29000,181818,0 , 'Admin', CURRENT_DATE union all 
 select 3002,03,8345,5,149000,181818,0, 'Admin', CURRENT_DATE union all 
@@ -307,23 +299,4 @@ select 7004,61,1, 'Admin', CURRENT_DATE  union all
 select 7004,62,1, 'Admin', CURRENT_DATE ;
 
 select * from im_purchase_return_products;
-
-ALTER TABLE im_users
-ALTER COLUMN user_type set NOT NULL;
-
-truncate table im_users;
-
-Insert into im_users(user_id,user_name,user_password,status)
-select 10001,'Madhusudhan Rao','12345678','Active' union ALL 
-select 10002,'Bharth Krishna','12345678','NotActive' union All
-select 10003,'Bhavani','12345678','Active' union ALL
-select 10004,'Bhuvitha','12345678','NotActive' union All
-select 10005,'Hema','12345678','NotActive' union All
-select 10006,'Chamundeswari','12345678','Active' union ALL 
-select 10007,'Thulasi','12345678','NotActive' union All
-select 10008,'Hanuman Naik','12345678','Active';
-
-select * from im_users;
-
-
 
