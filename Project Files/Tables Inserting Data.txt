@@ -1,0 +1,320 @@
+select * from im_indents_products;select * from im_hsn_code;
+
+select * from im_Products_Category;
+
+insert into im_products_category
+SELECT 101, 'Electronics','Admin',current_date UNION all
+SELECT 202, 'home','Admin',current_date UNION all
+select 303, 'personal care','Admin',current_date UNION all
+select 404, 'Appliances','Admin',current_date UNION all
+select 505, 'Daily Needs','Admin',current_date UNION all
+select 606, 'Sports','Admin',current_date UNION all
+select 707, 'Fashion','Admin',current_date ;
+
+
+insert into
+im_products(product_id,product_name,product_description,product_category_id,product_hsn_code,product_type,product_reorder_level,Ecommerce_Reorder_Level,Product_Status,Last_Updated_User,Last_Updated_Date)
+select 01,'MI Laptop','Its a mini Computer',101,181818,'Regular',10,5,'Active','Admin',current_date  union all
+select 02,'Realme Moblie','A Mobile is a small, portable personal item with a screen',101,181818,'Regular',10,5,'Active','Admin',current_date union all
+select 03,'Apple Smart Watch','A smart watch display time and also used to operate some moblie opertions',101,181818,'Regular',10,5,'Active','Admin',current_date  union all
+select 04,'Sony Camera','used to Click Good Pics',101,181818,'Regular',10,5,'Active','Admin',current_date union all
+select 11,'Hindware Kitchen','used in kitchen',202,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 12,'Surya Lights','used to in dark to have some some sight',202,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 13,'SleepX Beds','have a comfort sleep',202,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 14,'Appolo Medicine','used when you are sick',202,202020,'Regular',10,5,'Active','Admin',current_date union all
+select 21,'Loreal Skin Care','need a glow use this',303,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 22,'Loreal Hair Care','use and loose',303,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 23,'Fogg Fragrances','smell the delight',303,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 24,'Beardo Men Grooming','use the grooming andgetready to be the groom',303,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 31,'Mi Television','Watch the Show and get chill',404,282828,'Regular',10,5,'Active','Admin',current_date union all
+select 32,' Comtron Fans','Feel the air',404,282828,'Regular',10,5,'Active','Admin',current_date  union all
+select 33,'Loyyod Ac','Be Cool in the Cool',404,282828,'Regular',10,5,'Active','Admin',current_date  union all
+select 34,'Samsung Refrigerators','keep it and get the Cooled out',404,282828,'Regular',10,5,'Active','Admin',current_date  union all
+select 35,'Samsung Washing Machine',' keep cloths in and give rest to the hands',404,282828,'Regular',10,5,'Active','Admin',current_date  union all
+select 41,'Cool cake','feel the bike',505,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 42,'Arun ice cream','take the cool in and be chilled',505,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 43,'Maggie noodeles','get it ready in 1m in',505,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 44,'dal','try it with Mango pickle ',505,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 45,'rice','get all the portions inn',505,202020,'Regular',10,5,'Active','Admin',current_date  union all
+select 51,'Nike Sports Ware','Look Fit',606,505050,'Regular',10,5,'Active','Admin',current_date  union all
+select 52,'Nike Sports Shoes','Select the sports and the shoe',606,505050,'Regular',10,5,'Active','Admin',current_date  union all
+select 53,'Cricket Kit','Get the whole kit',606,505050,'Regular',10,5,'Active','Admin',current_date  union all
+select 54,'Dumbels Fitness Equipments','Get the Kit and be fit',606,505050,'Regular',10,5,'Active','Admin',current_date  union all
+select 55,'Energo Supplements','Get the power and get fit',606,505050,'Regular',10,5,'Active','Admin',current_date  union all
+select 61,'Allen Solly Men ware','Look Fit',707,121212,'Regular',10,5,'Active','Admin',current_date  union all
+select 62,'Allen solly Women Ware','Select the sports and the shoe',707,121212,'Regular',10,5,'Active','Admin',current_date  union all
+select 63,'Allen SollyKids ware','Get the whole kit',707,121212,'Regular',10,5,'Active','Admin',current_date ;
+
+
+select * from im_products
+
+
+
+INSERT INTO im_Products_Stock (Product_ID, Batch_NO, Product_Stock, Product_MRP, Product_Cost, Product_Sale_Price, Last_Updated_User, Last_Updated_Date)
+VALUES
+(1, 1, 100, 50000.00, 40000.00, 45000.00, 'Admin', CURRENT_DATE),
+(2, 1, 50, 12000.00, 10000.00, 11000.00, 'Admin', CURRENT_DATE),
+(3, 1, 200, 7500.00, 7000.00, 7200.00, 'Admin', CURRENT_DATE),
+(4, 1, 80, 15000.00, 13000.00, 14000.00, 'Admin', CURRENT_DATE),
+(11, 1, 75, 3000.00, 2500.00, 2800.00, 'Admin', CURRENT_DATE),
+(12, 1, 120, 800.00, 600.00, 700.00, 'Admin', CURRENT_DATE),
+(13, 1, 50, 15000.00, 12000.00, 13000.00, 'Admin', CURRENT_DATE),
+(14, 1, 100, 200.00, 150.00, 180.00, 'Admin', CURRENT_DATE),
+(21, 1, 90, 500.00, 400.00, 450.00, 'Admin', CURRENT_DATE),
+(22, 1, 60, 1000.00, 800.00, 900.00, 'Admin', CURRENT_DATE),
+(23, 1, 150, 700.00, 500.00, 600.00, 'Admin', CURRENT_DATE),
+(24, 1, 70, 1200.00, 1000.00, 1100.00, 'Admin', CURRENT_DATE),
+(31, 1, 100, 20000.00, 18000.00, 19000.00, 'Admin', CURRENT_DATE),
+(32, 1, 80, 1500.00, 1300.00, 1400.00, 'Admin', CURRENT_DATE),
+(33, 1, 120, 35000.00, 32000.00, 33000.00, 'Admin', CURRENT_DATE),
+(34, 1, 90, 50000.00, 48000.00, 49000.00, 'Admin', CURRENT_DATE),
+(35, 1, 60, 20000.00, 18000.00, 19000.00, 'Admin', CURRENT_DATE),
+(41, 1, 100, 150.00, 120.00, 130.00, 'Admin', CURRENT_DATE),
+(42, 1, 150, 80.00, 60.00, 70.00, 'Admin', CURRENT_DATE),
+(43, 1, 200, 20.00, 15.00, 18.00, 'Admin', CURRENT_DATE),
+(44, 1, 250, 100.00, 80.00, 90.00, 'Admin', CURRENT_DATE),
+(45, 1, 120, 1500.00, 1400.00, 1450.00, 'Admin', CURRENT_DATE),
+(51, 1, 80, 1000.00, 800.00, 900.00, 'Admin', CURRENT_DATE),
+(52, 1, 120, 2500.00, 2000.00, 2200.00, 'Admin', CURRENT_DATE),
+(53, 1, 90, 5000.00, 4000.00, 4500.00, 'Admin', CURRENT_DATE),
+(54, 1, 150, 4000.00, 3500.00, 3800.00, 'Admin', CURRENT_DATE),
+(55, 1, 100, 2000.00, 1800.00, 1900.00, 'Admin', CURRENT_DATE),
+(61, 1, 120, 1500.00, 1400.00, 1450.00, 'Admin', CURRENT_DATE),
+(62, 1, 150, 1000.00, 800.00, 900.00, 'Admin', CURRENT_DATE),
+(63, 1, 90, 800.00, 600.00, 700.00, 'Admin', CURRENT_DATE);
+
+
+select * from im_products_stock
+
+
+Insert into im_Vendor (Vendor_ID ,Vendor_Name ,Vendor_Address ,Vendor_PhoneNumber ,Status ,User_ID,Last_Updated_User,Last_Updated_Date)
+select 20001,'Nag Mahesh','Viziznagarm',9012345678,'NotActive',10002, 'Admin', CURRENT_DATE union All 
+select 20002,'Prasanna','Vizag',9012345678,'Active',10003, 'Admin', CURRENT_DATE union ALL
+select 20003,'Ritesh','Vijayawada',9012345678,'NotActive',10004, 'Admin', CURRENT_DATE union All
+select 20004,'Sai Krishna','Vizag',9012345678,'Active',10004, 'Admin', CURRENT_DATE union ALL
+select 20005,'Sai Kumar','Viziznagarm',9012345678,'NotActive',10002, 'Admin', CURRENT_DATE union All
+select 20006,'Harika','Chittor',9012345678,'Active',10001, 'Admin', CURRENT_DATE union ALL
+select 20007,'Sujith','Srikakulam',9012345678,'NotActive',10003, 'Admin', CURRENT_DATE union All
+select 20008,'Vinay','kurnool',9012345678,'Active' ,10001, 'Admin', CURRENT_DATE; 
+
+
+
+select * from im_vendor;
+
+
+Insert Into im_purchase_Order (Purchase_Order_ID,Purchase_Order_Date ,Purchase_Order_Amount ,Vendor_ID ,Purchase_Order_Expected_Date ,Purchase_Order_Status ,user_id,Last_Updated_User,Last_Updated_Date)
+select 5001,date(now()),100000,20001,current_date + INTERVAL '7 day','Active',10001, 'Admin', CURRENT_DATE union all
+select 5002,date(now()),100000,20002,current_date + INTERVAL '7 day','Active',10002, 'Admin', CURRENT_DATE union all
+select 5003,date(now()),100000,20003,current_date + INTERVAL '5 day','Active',10003, 'Admin', CURRENT_DATE union all
+select 5004,date(now()),100000,20004,current_date + INTERVAL '7 day','Active',10004, 'Admin', CURRENT_DATE union all
+select 5005,date(now()),10000,20005,current_date + INTERVAL '4 day','Active',10005, 'Admin', CURRENT_DATE union all
+select 5006,date(now()),10000,20006,current_date + INTERVAL '6 day','Active',10006, 'Admin', CURRENT_DATE union all
+select 5007,date(now()),10000,20007,current_date + INTERVAL '8 day','Active',10007, 'Admin', CURRENT_DATE ;
+
+
+select * from im_purchase_order;
+
+insert into im_Purchase_Order_Products(Purchase_Order_ID ,Product_ID,Purchase_Order_Quantity,Negotiation_Price,Qunatity_Received)
+select 5001,01,10,48000,10 union all 
+select 5001,02,10,38000,10 union all 
+select 5001,03,10,138000,10 union all 
+select 5001,04,10,900,10 union all
+
+
+select 5002,11,10,3500,10 union all
+select 5002,12,10,350,10 union all
+select 5002,13,10,48000,10 union all 
+select 5002,14,10,3800,10 union all
+
+select 5003,21,10,480,10 union all 
+select 5003,22,10,480,10 union all 
+select 5003,23,10,480,10 union all 
+select 5003,24,10,480,10 union all
+
+select 5004,31,10,18000,10 union all 
+select 5004,32,10,4000,10 union all 
+select 5004,33,10,48000,10 union all 
+select 5004,34,10,28000,10 union all 
+select 5004,35,10,18000,10 union all
+
+select 5005,41,10,700,10 union all 
+select 5005,42,10,350,10 union all
+select 5005,43,10,38,10 union all 
+select 5005,44,10,65,10 union all 
+select 5005,45,10,35,10 union all
+
+select 5006,51,10,48000,10 union all 
+select 5006,52,10,350,10 union all
+select 5006,53,10,4700,10 union all 
+select 5006,54,10,8500,10 union all 
+select 5006,55,10,3500,10 union all
+
+select 5007,61,10,350,10 union all 
+select 5007,62,10,3500,10 union all 
+select 5007,63,10,350,10 ;
+
+select * from im_purchase_order_products;
+
+Insert into im_Indents (Indents_ID ,Indents_Date,Indents_Status ,User_ID,Last_Updated_User,Last_Updated_Date)
+select 9001, date(now()),'Active',10001, 'Admin', CURRENT_DATE union all 
+select 9002, date(now()),'Active',10002, 'Admin', CURRENT_DATE union all 
+select 9003, date(now()),'Active',10003, 'Admin', CURRENT_DATE union all 
+select 9004, date(now()),'Active',10004, 'Admin', CURRENT_DATE union all 
+select 9005, date(now()),'Active',10005, 'Admin', CURRENT_DATE union all 
+select 9006, date(now()),'Active',10006, 'Admin', CURRENT_DATE union all 
+select 9007, date(now()),'Active',10007, 'Admin', CURRENT_DATE union all 
+select 9008, date(now()),'Active',10008, 'Admin', CURRENT_DATE ;
+
+select * from im_indents;
+
+
+insert into im_Indents_Products (Indents_ID ,Indents_Products_ID ,Indents_Products_Quantity )
+select 9001,01,10 union all 
+select 9001,02,10 union all 
+select 9001,03,10 union all 
+select 9001,04,10 union all
+
+
+select 9002,11,10 union all 
+select 9002,12,10 union all 
+select 9002,13,10 union all 
+select 9002,14,10 union all
+
+select 9003,21,10 union all 
+select 9003,22,10 union all 
+select 9003,23,10 union all 
+select 9003,24,10 union all
+
+select 9004,31,10 union all 
+select 9004,32,10 union all 
+select 9004,33,10 union all 
+select 9004,34,10 union all
+select 9004,35,10 union all
+
+select 9005,41,10 union all 
+select 9005,42,10 union all 
+select 9005,43,10 union all 
+select 9005,44,10 union all 
+select 9005,45,10 union all
+
+select 9006,51,10 union all 
+select 9006,52,10 union all 
+select 9006,53,10 union all 
+select 9006,54,10 union all 
+select 9006,55,10 union all
+
+select 9007,61,10 union all 
+select 9007,62,10 union all 
+select 9007,63,10 union all
+
+select 9008,01,10 union all 
+select 9008,11,10 union all 
+select 9008,02,10 union all 
+select 9008,03,10 union all 
+select 9008,21,10 union all 
+select 9008,12,10 union all 
+select 9008,23,10 ;
+
+
+select * from im_indents_products;
+
+
+insert into im_GRN (GRn_ID ,Grn_Date,Purchase_Order_ID,Grn_Amount ,Grn_Status,Last_Updated_User,Last_Updated_Date)
+select 3001, date(now()), 5001,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3002, date(now()), 5001,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3003, date(now()), 5002,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3004, date(now()), 5002,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3005, date(now()), 5003,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3006, date(now()), 5003,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3007, date(now()), 5004,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3008, date(now()), 5004,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3009, date(now()), 5005,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3010, date(now()), 5005,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3011, date(now()), 5006,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3012, date(now()), 5006,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3013, date(now()), 5007,50000,'Active', 'Admin', CURRENT_DATE union all 
+select 3014, date(now()), 5007,50000,'Active', 'Admin', CURRENT_DATE;
+
+select * from im_grn;
+
+ALTER TABLE im_grn_products 
+rename COLUMN gst to hsn_code;
+
+ALTER TABLE im_grn_products 
+ALTER COLUMN hsn_code TYPE int;
+ 
+
+
+insert into im_GRN_Products (Grn_ID ,Product_ID ,Batch_NO ,Quantity,Price,Gst ,Bonus,Last_Updated_User,Last_Updated_Date)
+select 3001,01,8123,5,49000,181818,0, 'Admin', CURRENT_DATE union all 
+select 3001,02,8234,5,29000,181818,0 , 'Admin', CURRENT_DATE union all 
+select 3002,03,8345,5,149000,181818,0, 'Admin', CURRENT_DATE union all 
+select 3002,04,8567,5,1000,181818,0, 'Admin', CURRENT_DATE union all
+select 3003,11,8456,5,4000,202020,0, 'Admin', CURRENT_DATE union all
+select 3003,12,8678,5,400,202020,0, 'Admin', CURRENT_DATE union all
+select 3004,13,8789,5,50000,202020,0, 'Admin', CURRENT_DATE union all 
+select 3004,14,8147,5,5000,202020,0 , 'Admin', CURRENT_DATE union all			
+select 3005,21,8258,5,490,202020,0, 'Admin', CURRENT_DATE union all	
+select 3005,22,8369,5,490,202020,0, 'Admin', CURRENT_DATE union all
+select 3005,23,8987,5,490,202020,0, 'Admin', CURRENT_DATE union all
+select 3006,24,8654,5,490,202020,0, 'Admin', CURRENT_DATE union all
+select 3006,31,8321,5,19000,282828,0, 'Admin', CURRENT_DATE union all 
+select 3007,32,8159,5,4900,282828,0, 'Admin', CURRENT_DATE union all
+select 3007,33,8753,5,49000,282828,0, 'Admin', CURRENT_DATE union all 
+select 3008,34,8842,5,29000,282828,0, 'Admin', CURRENT_DATE union all 
+select 3008,35,8965,5,19000,282828,0, 'Admin', CURRENT_DATE union all 
+select 3001,41,8842,5,750,202020,0, 'Admin', CURRENT_DATE union all
+select 3001,42,8571,5,400,202020,0, 'Admin', CURRENT_DATE union all
+select 3002,43,8862,5,40,202020,0, 'Admin', CURRENT_DATE union all
+select 3002,44,8196,5,70,202020,0, 'Admin', CURRENT_DATE union all
+select 3003,45,8367,5,40,202020,0, 'Admin', CURRENT_DATE union all
+select 3003,51,8958,5,50000,505050,0, 'Admin', CURRENT_DATE union all 
+select 3004,52,8153,5,500,505050,0, 'Admin', CURRENT_DATE union all
+select 3004,53,8453,5,5000,505050,0, 'Admin', CURRENT_DATE union all
+select 3005,54,8756,5,10000,505050,0, 'Admin', CURRENT_DATE union all 
+select 3005,55,8864,5,5000,505050,0, 'Admin', CURRENT_DATE union all
+select 3006,61,8456,5,500,121212,2, 'Admin', CURRENT_DATE union all
+select 3006,62,8457,5,500,121212,2, 'Admin', CURRENT_DATE union all
+select 3007,63,8458,5,500,121212,2, 'Admin', CURRENT_DATE ;
+
+
+select * from im_grn_products;
+
+
+insert into im_Purchase_Return (Purchase_return_id ,Purchase_return_date ,GRN_NO,grn_cost ,Vendor_ID ,Purchase_status ,Purchase_Return_Description,Last_Updated_User,Last_Updated_Date)
+select 7001,date(now()),3001,50000,20001,'Active','Damage', 'Admin', CURRENT_DATE union all 
+select 7002,date(now()),3004,10000,20004,'Active','Damage', 'Admin', CURRENT_DATE union all 
+select 7003,date(now()),3008,20000,20001,'Active','Damage', 'Admin', CURRENT_DATE union all 
+select 7004,date(now()),3006,1000,20003,'Active','Damage', 'Admin', CURRENT_DATE ;
+
+
+select * from im_purchase_return;
+
+insert into im_Purchase_Return_products(Purchase_return_id,Product_id ,Quantity,Last_Updated_User,Last_Updated_Date)
+select 7001,01,1, 'Admin', CURRENT_DATE  union all 
+select 7002,52,2, 'Admin', CURRENT_DATE  union all 
+select 7003,34,1, 'Admin', CURRENT_DATE  union all 
+select 7004,61,1, 'Admin', CURRENT_DATE  union all 
+select 7004,62,1, 'Admin', CURRENT_DATE ;
+
+select * from im_purchase_return_products;
+
+ALTER TABLE im_users
+ALTER COLUMN user_type set NOT NULL;
+
+truncate table im_users;
+
+Insert into im_users(user_id,user_name,user_password,status)
+select 10001,'Madhusudhan Rao','12345678','Active' union ALL 
+select 10002,'Bharth Krishna','12345678','NotActive' union All
+select 10003,'Bhavani','12345678','Active' union ALL
+select 10004,'Bhuvitha','12345678','NotActive' union All
+select 10005,'Hema','12345678','NotActive' union All
+select 10006,'Chamundeswari','12345678','Active' union ALL 
+select 10007,'Thulasi','12345678','NotActive' union All
+select 10008,'Hanuman Naik','12345678','Active';
+
+select * from im_users;
+
+
+
