@@ -1,0 +1,275 @@
+--1. —---------------------------------HSN—---------------------------------------------------
+CREATE Table im_HSN_Code( 
+ HSN_CODE INT PRIMARY KEY, 
+ GST numeric(4,2), 
+ Last_Updated_User varchar(20),
+ Last_Updated_Date date );
+
+
+--2.—---------------------------------Products_Category —---------------------------------------------------
+CREATE Table im_Products_Category (
+ Product_Category_ID INT PRIMARY KEY, 
+ Product_Category_Name Varchar (50), 
+ Last_Updated_User varchar(20), 
+ Last_Updated_Date date );
+ 
+
+--3.—---------------------------------Products —---------------------------------------------------
+ CREATE Table im_Products( 
+     Product_ID serial PRIMARY KEY,
+     Product_Name Varchar(30),
+     Product_Image Varchar,
+     Product_Description Varchar(200),
+     Product_Category_ID INT, 
+     Product_HSN_Code int,
+     Product_Type varchar(50), 
+     Product_Reorder_Level int, 
+     Ecommerce_Reorder_Level int, 
+     Product_Status varchar(20), 
+     Last_Updated_User varchar(20), 
+     Last_Updated_Date date, 
+     CONSTRAINT FK_ProdCtg FOREIGN KEY (Product_Category_ID) REFERENCES im_Products_Category(Product_Category_ID),
+     CONSTRAINT FK_HS FOREIGN KEY (Product_HSN_Code) REFERENCES im_HSN_Code(HSN_CODE) );
+     
+
+--4.—---------------------------------Products_Stock —---------------------------------------------------
+CREATE Table im_Products_Stock( 
+    Product_ID int, 
+    Batch_NO Int,
+    Product_Stock int,
+    Product_MRP numeric, 
+    Product_Cost numeric,
+    Product_Sale_Price numeric, 
+    Last_Updated_User varchar(20), 
+    Last_Updated_Date date, 
+    CONSTRAINT FK_PID FOREIGN KEY (Product_ID) REFERENCES im_Products(Product_ID), 
+    Primary key(Product_ID,Batch_NO) );
+
+
+--5.—---------------------------------Vendor —---------------------------------------------------
+create sequence im_vendor_Id
+start 20001
+increment 1
+    
+CREATE Table im_Vendor ( 
+    Vendor_ID int default nextval('im_vendor_id') PRIMARY KEY, 
+    Vendor_Name VARCHAR (50), 
+    Vendor_Address Varchar(100), 
+    Vendor_PhoneNumber bigint, 
+    Status varchar (20), 
+    User_ID INT, 
+    Last_Updated_User varchar(20), 
+    Last_Updated_Date date );
+    
+    
+
+
+--6.—---------------------------------Purchase_Order —---------------------------------------------------
+create sequence im_purchase_order_id
+start 5001
+increment 1
+
+CREATE Table im_Purchase_Order ( 
+    Purchase_Order_ID int default nextval('im_purchase_order_id') PRIMARY KEY, 
+    Purchase_Order_Date date, 
+    Purchase_Order_Amount numeric, 
+    Vendor_ID int, 
+    Purchase_Order_Expected_Date date, 
+    Purchase_Order_Status Varchar(15), 
+    USER_ID INT, 
+    Last_Updated_User varchar(20), 
+    Last_Updated_Date date, 
+    CONSTRAINT FK_V_ID FOREIGN KEY (Vendor_ID) REFERENCES im_Vendor(Vendor_ID) );
+    
+
+
+--7.—---------------------------------Purchase_Order_Products -----------------------------------
+CREATE Table im_Purchase_Order_Products(
+Purchase_Order_ID int,
+Product_ID INT,
+Purchase_Order_Quantity Int,
+Negotiation_Price numeric,
+Qunatity_Received Int,
+PRIMARY KEY (Purchase_Order_ID, Product_ID),
+CONSTRAINT FK_PO_ID
+FOREIGN KEY (Purchase_Order_ID)
+REFERENCES im_Purchase_Order(Purchase_Order_ID),
+CONSTRAINT FK_P_ID
+FOREIGN KEY (Product_ID)
+REFERENCES im_Products(Product_ID)
+);
+
+
+--8.—---------------------------------Indents ---------------------------------------
+
+create sequence im_Indents_id
+start 9001
+increment 1
+
+CREATE Table im_Indents (
+Indents_ID int default nextval('im_indents_id') PRIMARY KEY,
+Indents_Date date,
+Indents_Status VArChar(20),
+User_ID Int,
+Last_Updated_User varchar(20),
+Last_Updated_Date date
+);
+
+
+--9.—-------------------------------------Indents_Products---------------------------------------
+
+
+CREATE Table im_Indents_Products (
+Indents_ID INT,
+Indents_Products_ID int,
+Indents_Products_Quantity Int,
+PRIMARY KEY (Indents_ID, Indents_Products_ID),
+CONSTRAINT FK_I_ID
+FOREIGN KEY (Indents_ID)
+REFERENCES im_Indents(Indents_ID),
+CONSTRAINT FK_P_ID
+FOREIGN KEY (Indents_Products_ID)
+REFERENCES im_Products(Product_ID)
+);
+--10.—-------------------------------------GRN ---------------------------------------
+
+create sequence im_grn_id
+start 3001
+increment 1
+
+CREATE Table im_GRN (
+GRN_ID int default nextval('im_grn_id') Primary Key,
+GRN_Date date,
+Purchase_Order_ID Int,
+GRN_Amount numeric,
+GRN_Status varchar(20),
+Last_Updated_User varchar(20),
+Last_Updated_Date date,
+CONSTRAINT FK_PO_ID
+FOREIGN KEY (Purchase_Order_ID)
+REFERENCES im_Purchase_Order(Purchase_Order_ID)
+);
+
+
+--11. —-------------------------------------GRN_Products ---------------------------------------
+
+
+CREATE Table im_GRN_Products (
+GRN_ID int,
+Product_ID Int,
+Batch_NO int,
+Quantity Int,
+Price numeric,
+Gst numeric(4,2),
+Bonus Int,
+Last_Updated_User varchar(20),
+Last_Updated_Date date,
+CONSTRAINT FK_GN_ID
+FOREIGN KEY (GRN_ID)
+REFERENCES im_GRN(GRN_ID),
+CONSTRAINT FK_PO_ID
+FOREIGN KEY (Product_ID)
+REFERENCES im_Products(Product_ID)
+);
+
+--12.—-----------------------------------Purchase_Return ---------------------------------------
+
+create sequence im_purchase_retrun_id
+start 7001
+increment 1
+
+create table im_Purchase_Return(
+Purchase_return_id int default nextval('im_purchase_retrun_id') primary key,
+Purchase_return_date TIMESTAMP ,
+GRN_NO int,
+Grn_cost numeric,
+Vendor_ID int ,
+Purchase_status varchar(10),
+Purchase_Return_Description varchar(100),
+Last_Updated_User varchar(20),
+Last_Updated_Date date,
+CONSTRAINT FK_GN_NO
+FOREIGN KEY (GRN_NO)
+REFERENCES im_GRN(GRN_ID),
+CONSTRAINT FK_V_ID
+FOREIGN KEY (Vendor_ID)
+REFERENCES im_Vendor(Vendor_ID)
+) ;
+
+--13.—---------------------------------Purchase_Return_Products---------------------------------------
+
+
+create table im_Purchase_Return_Products(
+Purchase_return_id int,
+Product_id int,
+Quantity int,
+PRIMARY KEY (Purchase_return_id, Product_id),
+Last_Updated_User varchar(20),
+Last_Updated_Date date,
+CONSTRAINT FK_PurchaseReturn
+FOREIGN KEY (Purchase_return_id)
+REFERENCES im_Purchase_Return(Purchase_return_id)
+on DELETE cascade,
+CONSTRAINT FK_P_ID
+FOREIGN KEY (Product_ID)
+REFERENCES im_Products(Product_ID)
+);
+
+--14.—---------------------------------CustomSet_Products---------------------------------------
+
+
+CREATE table im_CustomSet_Products(
+Custom_Product_ID Int,
+Sub_Product_ID Int,
+quantity int,
+Last_Updated_User varchar(20),
+Last_Updated_Date date,
+PRIMARY KEY (Custom_Product_ID, Sub_Product_ID),
+CONSTRAINT FK_P_ID
+FOREIGN KEY (Custom_Product_ID)
+REFERENCES im_Products(Product_ID) ,
+CONSTRAINT FK_S_P_ID
+FOREIGN KEY (Sub_Product_ID)
+REFERENCES im_Products(Product_ID)
+);
+
+
+--15.—---------------------------------Users ---------------------------------------
+
+CREATE Table im_Users (
+User_ID varchar(30) Primary Key NOT NULL,
+User_Name varchar(50) NOT NULL,
+User_Password varchar(10) NOT NULL,
+User_type varchar(10) NOT NULL,
+Status varchar(20) NOT NULL,
+Otp int,
+Otp_expiry_time date
+);
+
+
+--16.—---------------------------------Stores ---------------------------------------
+
+CREATE Table im_Stores(
+Store_ID int Primary key,
+Store_name varchar(20),
+Store_Address varchar(40),
+Store_Contact_Number int,
+Status varchar(20) not null
+);
+
+--17.—--------------------------------- Store Users ---------------------------------------
+
+CREATE Table im_Store_Users (
+User_ID varchar(30) Primary Key NOT NULL,
+User_Name varchar(50) NOT NULL,
+User_Password varchar(10) NOT NULL,
+User_type varchar(10) NOT NULL,
+Store_id int,
+Status varchar(20) NOT NULL,
+Otp int,
+Otp_expiry_time date,
+CONSTRAINT FK_S_U_SID
+FOREIGN KEY (Store_ID)
+REFERENCES im_stores(Store_ID)
+);
+
