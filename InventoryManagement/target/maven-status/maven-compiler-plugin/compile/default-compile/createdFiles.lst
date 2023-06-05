@@ -1,0 +1,6 @@
+main\InventoryManagement\dao\users\UsersOperations.class
+main\InventoryManagement\InventoryManagementApplication.class
+main\InventoryManagement\models\Vendor.class
+main\InventoryManagement\config\HibernateConf.class
+main\InventoryManagement\dao\users\UsersImpl.class
+main\InventoryManagement\controllers\HomeController.class
