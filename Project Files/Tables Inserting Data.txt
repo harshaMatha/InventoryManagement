@@ -2,6 +2,15 @@ select * from im_indents_products;select * from im_hsn_code;
 
 select * from im_Products_Category;
 
+inaert into im_hsn_code(hsn_code,gst)
+select 181818, 18 union all
+select 282828, 28 union all
+select 000000, 0 union all
+select 505050, 5 union all
+select 202020, 2 union all
+select 121212, 12;
+
+
 insert into im_products_category
 SELECT 101, 'Electronics','Admin',current_date UNION all
 SELECT 202, 'home','Admin',current_date UNION all
