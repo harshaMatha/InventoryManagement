@@ -49,7 +49,7 @@ CREATE Table im_Products_Stock(
 --5.—---------------------------------Vendor —---------------------------------------------------
 create sequence im_vendor_Id
 start 20001
-increment 1
+increment 1;
     
 CREATE Table im_Vendor ( 
     Vendor_ID int default nextval('im_vendor_id') PRIMARY KEY, 
@@ -67,7 +67,7 @@ CREATE Table im_Vendor (
 --6.—---------------------------------Purchase_Order —---------------------------------------------------
 create sequence im_purchase_order_id
 start 5001
-increment 1
+increment 1;
 
 CREATE Table im_Purchase_Order ( 
     Purchase_Order_ID int default nextval('im_purchase_order_id') PRIMARY KEY, 
@@ -104,7 +104,7 @@ REFERENCES im_Products(Product_ID)
 
 create sequence im_Indents_id
 start 9001
-increment 1
+increment 1;
 
 CREATE Table im_Indents (
 Indents_ID int default nextval('im_indents_id') PRIMARY KEY,
@@ -135,7 +135,7 @@ REFERENCES im_Products(Product_ID)
 
 create sequence im_grn_id
 start 3001
-increment 1
+increment 1;
 
 CREATE Table im_GRN (
 GRN_ID int default nextval('im_grn_id') Primary Key,
@@ -176,7 +176,7 @@ REFERENCES im_Products(Product_ID)
 
 create sequence im_purchase_retrun_id
 start 7001
-increment 1
+increment 1;
 
 create table im_Purchase_Return(
 Purchase_return_id int default nextval('im_purchase_retrun_id') primary key,
