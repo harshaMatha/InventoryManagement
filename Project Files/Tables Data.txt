@@ -160,7 +160,7 @@ Product_ID Int,
 Batch_NO int,
 Quantity Int,
 Price numeric,
-Gst numeric(4,2),
+hsn_code int,
 Bonus Int,
 Last_Updated_User varchar(20),
 Last_Updated_Date date,
@@ -169,8 +169,12 @@ FOREIGN KEY (GRN_ID)
 REFERENCES im_GRN(GRN_ID),
 CONSTRAINT FK_PO_ID
 FOREIGN KEY (Product_ID)
-REFERENCES im_Products(Product_ID)
+REFERENCES im_Products(Product_ID),
+CONSTRAINT FK_hsn_code
+FOREIGN KEY (hsn_code)
+REFERENCES im_hsn_code(hsn_code)
 );
+
 
 --12.—-----------------------------------Purchase_Return ---------------------------------------
 
