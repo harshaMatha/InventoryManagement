@@ -17,64 +17,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
    
-    $(document).ready(function() {
-        $("#indentButton").click(function(event) {
-            event.preventDefault(); 
+    function Myfunction(controllerUrl) {
 
             $.ajax({
-                url: "indentbutton",
+                url: controllerUrl,
                 method: "GET",
                 success: function(response) {
-                    console.log("Indents Button call successful");
                     $("#content").html(response);
                 },
                 error: function() {
                     console.log("AJAX call error");
                 }
-            });
-        });
+            });  
         
-        
-        
-        
-        $("#adjustmentsButton").click(function(event) {
-            event.preventDefault(); 
-
-            $.ajax({
-                url: "adjustmentsbutton",
-                method: "GET",
-                success: function(response) {
-                    console.log("Adjustments Button called successful");
-                    $("#content").html(response);
-                },
-                error: function() {
-                    console.log("AJAX call error");
-                }
-            });
-        });
-        
-        
-        
-        $("#priceReviewButton").click(function(event) {
-            event.preventDefault(); 
-
-            $.ajax({
-                url: "pricereviewbutton",
-                method: "GET",
-                success: function(response) {
-                    console.log("Indents Button call successful");
-                    $("#content").html(response);
-                },
-                error: function() {
-                    console.log("AJAX call error");
-                }
-            });
-        });
-        
-        
-        
-        
-    });
+    }
    
 
    </script>
@@ -175,22 +131,22 @@
       <div class="d-flex" id="wrapper">
       <!-- Sidebar -->
       <div class="bg-white" id="sidebar-wrapper">
-         <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+         <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom" >
             <span class="material-symbols-outlined">warehouse</span>Pennant Inventory
          </div>
          <div class="list-group list-group-flush my-3">
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active">
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active" onclick="Myfunction('wareHouseButton')">
             <span class="material-symbols-outlined">inventory</span>Warehouse Stock</a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="indentButton">
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="indentsButton" onclick="Myfunction('indentsButton')" >
             <i><span class="material-symbols-outlined">
             order_approve
             </span></i> Create Indent</a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="adjustmentsButton">
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="adjustmentsButton" onclick="Myfunction('adjustmentsButton')">
             <span class="material-symbols-outlined">
             equalizer
             </span>
-            Adjustments</a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="priceReviewButton">
+            Adjustments</a> 
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="priceReviewButton" onclick="Myfunction('priceReviewButton')">
             <i>
             <span class="material-symbols-outlined">
             currency_rupee
