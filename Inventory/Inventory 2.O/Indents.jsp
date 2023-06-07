@@ -20,12 +20,14 @@
       border: none;
       color: white;
       padding: 6px 12px;
+       font-weight: bold;
       text-align: center;
       text-decoration: none;
       display: inline-block;
       font-size: 14px;
       margin: 4px 2px;
       cursor: pointer;
+      border-radius:6px;
     }
 
     .table-container {
@@ -54,14 +56,6 @@
       margin-bottom: 10px;
     }
 
-    .form-submit {
-      padding: 8px 16px;
-      background-color: #4CAF50;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
-
     .form-submit:hover {
       background-color: #45a049;
       
@@ -77,6 +71,8 @@
       background-color: white;
       height: 50px;
       overflow-y: scroll;
+      width:500px;
+     margin-left:90px;
     }
     #total_indent
     {
@@ -117,11 +113,17 @@
       
     
     }
-    .form-submit{
+    .addProductsButtonClass{
     margin-left:50px;
-    border-radius:8px;
-    width:150px;
+    border-radius:6px;
+    width:121px;
     height:40px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     
     }
     #product-form{
@@ -131,20 +133,27 @@
     
     }
     
-      label {
+    label {
       display: block;
       font-weight: bold;
       color: #333;
       margin-bottom: 5px;
     }
-    #form-products{
-      padding: 8px 16px;
-      background-color: #4CAF50;
-      border: none;
-      color: white;
-      cursor: pointer;
-    
+    #createIndentButtonId{
+    margin-left:300px;
+    border-radius:6px;
+    width:80px;
+    height:40px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+     
     }
+    
+
   </style>
 </head>
 <body>
@@ -284,7 +293,7 @@
   </div>
 </div>
 
-<h2 align="center">Create Indent</h2>
+<h2 align="center" style="margin-left:60px; margin-bottom:20px">Create Indent</h2>
 
   <form id="product-form" >
     <div class="form-input-container" >
@@ -298,18 +307,18 @@
       <input class="form-input" type="number" id="requiredstockid" required  >
     </div>
 
-    <button class="form-submit" type="button" onclick="addProduct()">Add Product</button>
+    <button class="addProductsButtonClass" type="button" onclick="addProduct()">Add Product</button>
   </form>
-  <h2 align="center">Indents List</h2>
+  <h2 align="center" style="margin-left:60px; margin-bottom:20px">Indents List</h2>
 <div id="addedproducts" >
 <form>
-  <table id="products-table">
+  <table class="table bg-white rounded shadow-sm  table-hover" id="products-table">
     <thead>
       <tr>
         <th>Product ID</th>
        
         <th>Required Stock</th>
-        <th></th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody id="products-table-body">
@@ -317,7 +326,7 @@
   </table>
 
 
-    <input type="submit" value="Submit" style="margin-left:90px" id="form-products">
+    <input type="submit" value="Submit" id="createIndentButtonId">
   </form>
 </div>
   <script>
