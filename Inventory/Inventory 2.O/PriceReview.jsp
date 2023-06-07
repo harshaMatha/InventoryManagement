@@ -5,9 +5,10 @@
 <head>
   <title>Price Review</title>
   <style>
-    #htag{
+  #htag{
   position: relative;
   top: 20px;
+  margin-left: 350px;
   }
     body {
       font-family: Arial, sans-serif;
@@ -17,7 +18,7 @@
     form {
       max-width: 400px;
       margin-top: 60px;
-       margin-left: 500px;
+       margin-left: 350px;
       padding: 20px;
       background-color: #ffffff;
       border: 1px solid #ccc;
@@ -41,13 +42,16 @@
     }
 
     button[type="submit"] {
-      background-color: #4CAF50;
-      color: #ffffff;
-      padding: 10px 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
+       margin-left:50px;
+    border-radius:6px;
+    width:121px;
+    height:40px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     button[type="submit"]:hover {
@@ -89,7 +93,7 @@
     <input type="text" id="modifiedcostid" name="ModifiedCost">
     
      <label for="reasonid">Reason:</label>
-    <textarea id="reasonid" name="Reason" rows="4" cols="50" style="padding-right:10px"></textarea>
+    <textarea id="reasonid" name="Reason" rows="4" cols="42"  style="padding-right:10px"></textarea>
     
 
     <button type="submit" style="margin-left:140px">Update Cost</button>
