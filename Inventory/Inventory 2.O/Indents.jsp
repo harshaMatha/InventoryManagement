@@ -5,12 +5,17 @@
 <head>
   <title>Product Details</title>
   <style>
+    #htag{
+  position: relative;
+  top: 20px;
+  }
     table {
       border-collapse: collapse;
       margin-bottom: 20px;
     }
 
     th, td {
+    text-align:center;
       border: 1px solid black;
       padding: 8px;
     }
@@ -32,7 +37,7 @@
 
     .table-container {
       display: flex;
-      padding-bottom: 100px;
+      padding-bottom: 60px;
     }
 
     .table-container table {
@@ -71,7 +76,7 @@
       background-color: white;
       height: 50px;
       overflow-y: scroll;
-      width:500px;
+      width:400px;
      margin-left:90px;
     }
     #total_indent
@@ -82,24 +87,24 @@
     }
     
         #first_table {
-       height: 150px;
+       height: 200px;
       
       overflow-y: scroll;
     }
     
         #Product-details-table {
        background-color: white;
-      width:300px;
+      width:420px;
 
     }
            #reorder-level-table {
       background-color: white;
-      width:300px;
+      width:420px;
 
     }
     
     #second_table {
-       height: 150px;
+       height: 200px;
       
       overflow-y: scroll;
     }
@@ -140,7 +145,7 @@
       margin-bottom: 5px;
     }
     #createIndentButtonId{
-    margin-left:300px;
+    margin-left:260px;
     border-radius:6px;
     width:80px;
     height:40px;
@@ -152,14 +157,36 @@
      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
      
     }
-    
+    #products-dropdown
+    {
+    display:flex;
+     margin-left:650px;
+     padding-bottom:5px;
+     
+    }
+     .error-message {
+      color: red;
+      font-size: 12px;
+      margin-top: 5px;
+    }
 
   </style>
 </head>
 <body>
-  <h2 align="center" style="padding-left: 110px; margin-bottom: 50px">Product Details</h2>
+<div id="htag">
+  <h2 align="center" style="padding-left: 110px; margin-bottom: 50px">Create Indent</h2>
+  </div>
+    <div  align="center" style="margin-right: 70px; margin-bottom: 30px" id="products-dropdown">
+    <label for="product-category" style="padding-right:10px; font-size:23px">Product Category </label>
+    <select id="product-category">
+      <option value="category1">Soaps & Lotions</option>
+      <option value="category2">Category 2</option>
+      <option value="category3">Category 3</option>
+      <!-- Add more options as needed -->
+    </select>
+  </div>
   <div class="table-container">
-  <div style="margin-right:50px; margin-left:170px ">
+  <div style="margin-right:50px; margin-left:60px ">
    <h3 align="center">Reorder Level Details</h3>
     <div  id="first_table">
    
@@ -167,60 +194,60 @@
      
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Age</th>
+          <th>Product Category</th>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Batch No.</th>
+          <th>Stock</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>John</td>
-          <td>25</td>
+          <td></td>
+          <td>101</td>
+          <td>Pears Soap</td>
+          <td>14268</td>
+          <td>50</td>
+          
+        </tr>
+        
+        <tr>
+         <td></td>
+          <td>102</td>
+          <td>Santoor Soap</td>
+          <td>14267</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>Jane</td>
-          <td>30</td>
+         <td></td>
+         <td>103</td>
+          <td>Rexona Soap</td>
+          <td>14266</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>John</td>
-          <td>25</td>
-        </tr>
-        <tr>
-          <td>Jane</td>
-          <td>30</td>
+         <td></td>
+       <td>104</td>
+          <td>Lifebuoy Soap</td>
+          <td>14269</td>
+          <td>50</td>
         </tr>
         <!-- Add more rows -->
         <tr>
-          <td>David</td>
-          <td>28</td>
+         <td></td>
+          <td>101</td>
+          <td>Pears Soap</td>
+          <td>14268</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>Sarah</td>
-          <td>35</td>
+         <td></td>
+           <td>101</td>
+          <td>Pears Soap</td>
+          <td>14268</td>
+          <td>50</td>
         </tr>
-        <tr>
-          <td>Michael</td>
-          <td>42</td>
-        </tr>
-        <tr>
-          <td>Emily</td>
-          <td>31</td>
-        </tr>
-        <tr>
-          <td>Daniel</td>
-          <td>27</td>
-        </tr>
-        <tr>
-          <td>Amy</td>
-          <td>29</td>
-        </tr>
-        <tr>
-          <td>Thomas</td>
-          <td>38</td>
-        </tr>
-        <tr>
-          <td>Olivia</td>
-          <td>33</td>
-        </tr>
+       
       </tbody>
     </table>
 </div>
@@ -233,82 +260,83 @@
     
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Gender</th>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Batch No.</th>
+          <th>Stock</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Mike</td>
-          <td>Male</td>
+         
+          <td>101</td>
+          <td>Pears Soap</td>
+          <td>14268</td>
+          <td>50</td>
+          
         </tr>
         <tr>
-          <td>Lisa</td>
-          <td>Female</td>
+         
+          <td>102</td>
+          <td>Santoor Soap</td>
+          <td>14267</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>John</td>
-          <td>25</td>
+        
+         <td>103</td>
+          <td>Rexona Soap</td>
+          <td>14266</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>Jane</td>
-          <td>30</td>
+         
+       <td>104</td>
+          <td>Lifebuoy Soap</td>
+          <td>14269</td>
+          <td>50</td>
         </tr>
         <!-- Add more rows -->
         <tr>
-          <td>David</td>
-          <td>28</td>
+        
+          <td>101</td>
+          <td>Pears Soap</td>
+          <td>14268</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>Sarah</td>
-          <td>35</td>
+         
+           <td>101</td>
+          <td>Pears Soap</td>
+          <td>14268</td>
+          <td>50</td>
         </tr>
-        <tr>
-          <td>Michael</td>
-          <td>42</td>
-        </tr>
-        <tr>
-          <td>Emily</td>
-          <td>31</td>
-        </tr>
-        <tr>
-          <td>Daniel</td>
-          <td>27</td>
-        </tr>
-        <tr>
-          <td>Amy</td>
-          <td>29</td>
-        </tr>
-        <tr>
-          <td>Thomas</td>
-          <td>38</td>
-        </tr>
-        <tr>
-          <td>Olivia</td>
-          <td>33</td>
-        </tr>
+       
       </tbody>
     </table>
     </div>
   </div>
 </div>
 
-<h2 align="center" style="margin-left:60px; margin-bottom:20px">Create Indent</h2>
+<h2 align="center" style="margin-left:60px; margin-bottom:20px">Indent</h2>
 
-  <form id="product-form" >
-    <div class="form-input-container" >
-      <label class="form-label" for="productid" style="padding-right:10px; padding-top:10px" >Product ID:</label>
-      <input class="form-input" type="text" id="productid_id" required style="margin-right:60px">
+   <form id="product-form">
+  <div class="form-input-container">
+    <label class="form-label" for="productid" style="padding-right:10px; padding-top:10px">Product ID:</label>
+    <div><input class="form-input" type="text" id="productid_id" required onblur="validateProductID()"><br>
+    <span id="productid-error" class="error-message"></span> </div>
     </div>
 
+  <div class="form-input-container">
+    <label class="form-label" for="requiredstock" style="padding-top:10px; padding-right:10px">Required Stock:</label>
+    <div>
+    <input class="form-input" type="number" id="requiredstockid" required onblur="validateRequiredStock()"><br>
+    
+<span id="requiredstock-error" class="error-message"></span></div>
+</div>
+  <button class="addProductsButtonClass" type="button" onclick="addProduct()">Add Product</button>
+</form>
 
-    <div class="form-input-container">
-      <label class="form-label" for="requiredstock" style="padding-top:10px ;padding-right:10px">Required Stock:</label>
-      <input class="form-input" type="number" id="requiredstockid" required  >
-    </div>
-
-    <button class="addProductsButtonClass" type="button" onclick="addProduct()">Add Product</button>
-  </form>
   <h2 align="center" style="margin-left:60px; margin-bottom:20px">Indents List</h2>
 <div id="addedproducts" >
 <form>
@@ -329,11 +357,43 @@
     <input type="submit" value="Submit" id="createIndentButtonId">
   </form>
 </div>
-  <script>
+ <script>
+    function validateProductID() {
+      var productIDInput = document.getElementById("productid_id");
+      var productIDError = document.getElementById("productid-error");
+
+      if (productIDInput.value.trim() === "") {
+        productIDError.textContent = "Product ID is required";
+      } else {
+        productIDError.textContent = "";
+      }
+    }
+
+    function validateRequiredStock() {
+      var requiredStockInput = document.getElementById("requiredstockid");
+      var requiredStockError = document.getElementById("requiredstock-error");
+
+      if (requiredStockInput.value.trim() === "") {
+        requiredStockError.textContent = "Required Stock is required";
+      } else {
+        requiredStockError.textContent = "";
+      }
+    }
+
     function addProduct() {
+      validateProductID();
+      validateRequiredStock();
+
+      // Check if there are any errors
+      var productIDError = document.getElementById("productid-error").textContent;
+      var requiredStockError = document.getElementById("requiredstock-error").textContent;
+
+      if (productIDError !== "" || requiredStockError !== "") {
+        return; // Exit the function if there are errors
+      }
+
       // Get input values
       var productid = document.getElementById("productid_id").value;
-
       var requiredstock = document.getElementById("requiredstockid").value;
 
       // Create new row in the table
@@ -344,8 +404,6 @@
       var productidCell = newRow.insertCell();
       productidCell.innerHTML = productid;
 
-
-
       var requiredstockCell = newRow.insertCell();
       requiredstockCell.innerHTML = requiredstock;
 
@@ -354,7 +412,6 @@
 
       // Clear input fields
       document.getElementById("productid_id").value = "";
-
       document.getElementById("requiredstockid").value = "";
     }
 
