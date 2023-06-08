@@ -1,0 +1,90 @@
+1) VendorController
+	- getVendorsList()
+
+2) AdminController  //returns page
+	- getWarehouseStock()
+	- getStoresStock()
+	- addUser()
+	- deleteUser()
+	- addVendor()
+	- updateVendor()
+	- deleteVendor()
+
+
+3) WarehouseController  //returns data
+	- getProductsCount()
+	- getCategoriesCount()
+	- getWarehouseValue()
+	- getStoreValue()
+	- getVendorsCount()
+
+
+4) ProductController  //returns data and updates data
+	- getProductCategories()
+	- getProducts()  //  returns productid and name
+	- getStock()  // returns product Stock
+	- getCost()  //returns cost of the required product
+	- getReorderLevelStock()
+	- createHsnCode()
+	- createProductCategory()
+	- createProduct()
+
+
+5) InventoryController  //returns pages to user
+	- getWarehouseStock()
+	- createIndent()
+	- listIndents()
+	- createAdjustment()
+	- createPriceReview()
+
+
+6) IndentsController  //retruns data
+	- getIndentsList()
+	- getIndentProducts()
+	- createIndentsList()
+
+
+7) AdjustmentsController  //updates data
+	-updateAdjustment()
+
+
+8) PriceReviewController  //updates data
+	- updatePrice()
+
+
+9) ProcurementController  //returns pages
+	- getWarehouseStock()
+	- listIndents()
+	- listPurchseOrder()
+	- createPurchaseOrder()
+	- listGrn()
+	- createGrn()
+	- listPurchaseReturns()
+	- createPurchaseReturn()
+	- addHSN()
+	- addProductCategory()
+	- addProduct()
+
+
+10) PurchaseController  //updates data and gets data from database
+	- getPurchaseList()
+	- getPurchaseProducts()
+	- makePurchseOrder()
+
+
+11) GrnController  //updates data and gets data from database
+	- getGrnList()
+	- getGrnProducts()
+	- makeGrn()
+
+
+12) PurchaseReturnController  //updates data and gets data from database
+	- getPurchaseReturnsList()
+	- makePurchaseReturn()
+
+
+13) LoginController
+	- loginValidation()
+	- forgotPassword()
+	- sendOtp()
+	- updatePassword()
