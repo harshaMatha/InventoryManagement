@@ -1,0 +1,777 @@
+-- urlmapping
+-- Method Type(post/get)
+-- input, Output
+-- Connected Screens
+
+1) VendorController
+	--> It is used to process the vendor information
+
+	--> Methods <--
+		
+		--1--
+		@GetMapping("getVendorsList")
+		getVendorsList()
+		{
+			-- It returns the vendor information (id, name, address, contactInfo, status)
+		}
+
+		--2--
+		@PostMapping("createVendor")
+		createVendor()
+		{
+			-- It takes the vendor information (id, name, address, contactInfo, status) from the view and creates the new vendor
+		}
+
+		--3--
+		@PostMapping("editVendor")
+		editVendor()
+		{
+			-- It takes the vendor information (id, name, address, contact Info, status) from the view and updates the vendor data(name, address, contactInfo, Status)
+		}
+
+		--4--
+		@PostMapping("removeVendor")
+		removeVendor()
+		{
+			-- It takes the vendor id and performs soft delete(updates status of vendor to unavaialble)
+		}
+
+
+2) AdminController  //returns page
+
+	--> It handles the controls of admin home page(redirecting the admin home pages)
+
+	--> Methods <--
+
+		--1--
+		@GetMapping("adminDashboard")
+		adminDashboard()
+		{
+			-- It returns the admin dashboard page
+		}
+
+
+		--2--
+		@GetMapping("getStoresStock")
+		getStoresStock()
+		{
+			-- It returns the Stores Stock page
+		}
+
+
+		--3--
+		@GetMapping("addUser")
+		addUser()
+		{
+			-- It returns the add User page
+		}
+
+
+		--4--
+		@GetMapping("deleteUser")
+		deleteUser()
+		{
+			-- It returns the delete User page
+		}
+
+
+		--5--
+		@GetMapping("addVendor")
+		addVendor()
+		{
+			-- It returns the add Vendor page
+		}
+
+
+		--6--
+		@GetMapping("updateVendor")
+		updateVendor()
+		{
+			-- It returns the update Vendor page
+		}
+
+
+		--7--
+		@GetMapping("deleteVendor")
+		deleteVendor()
+		{
+			-- It returns the delete Vendor page
+		}
+
+
+		--8--
+		@GetMapping("storeUser")
+		storeUser()
+		{
+			-- It returns the store User page which contains store and store user info
+		}
+
+
+3) UserController
+
+	--> It is used to process the user information
+
+	--> Methods <--
+		
+		--1--
+		@PostMapping("createUser")
+		createUser()
+		{
+			-- It takes the user information (id, password, name, address, contactInfo, userType) from the view and creates the new user
+		}
+
+
+		--2--
+		@PostMapping("removeUser")
+		removeUser()
+		{
+			-- It takes the user id and performs soft delete(updates status of user to unavaialble)
+		}
+
+		--3--
+		@PostMapping("editStoreUser")
+		editStoreVendor()
+		{
+			-- It takes the store user information (id, name, address, contact Info, status) from the view and updates the Store user data(name, address, contactInfo, Status)
+		}
+
+
+4) WarehouseController  //returns data
+
+	--> It is used to get the information regarding the warehouse
+
+	--> Methods <--
+		
+		--1--
+		@GetMapping("getWarehouseData")
+		getWarehouseData()
+		{
+			-- It takes no input but returns the categories count, total Products count, Warehouse value, vendors count and individual products count(used for graph) to the view by calling the below methods.
+		}
+
+		--2--
+		@GetMapping("getTotalProductsCount")
+		getTotalProductsCount()
+		{
+			-- It returns Total Products Count
+		}
+
+		--3--
+		@GetMapping("getProductsCount")
+		getProductsCount()
+		{
+			-- It returns Products Count and also the product name
+		}
+
+		--4--
+		@GetMapping("getCategoriesCount")
+		getCategoriesCount()
+		{
+			-- It returns Categories Count.
+		}
+
+		--5--
+		@GetMapping("getWarehouseValue")
+		getWarehouseValue()
+		{
+			-- It returns Warehouse Value.
+		}
+
+		--6--
+		@GetMapping("getVendorsCount")
+		getVendorsCount()
+		{
+			-- It returns Vendors Count.
+		}
+
+
+5) ProductController  //returns data and updates data
+
+	--> It is used to get the information regarding the product and updating the product data
+
+	--> Methods <--
+		
+		--1--
+		@GetMapping("getProductCategories")
+		getProductCategories()
+		{
+			-- It returns the Product Categories.
+		}
+		
+		--2--
+		@PostMapping("getProducts")
+		getProducts()
+		{
+			-- It takes product category as input from the view and returns the Products data (productid, batchNo, name).
+		}
+
+		--3--
+		@PostMapping("getStock")
+		getStock()
+		{
+			-- It takes product id and batchno as input from the view and returns the Stock data.
+		}
+
+		--4--
+		@PostMapping("getReorderLevelStock")
+		getReorderLevelStock()
+		{
+			-- It takes product id and batchno as input from the view and returns the Reorder Level Stock.
+		}
+
+		--5--
+		@PostMapping("createHsnCode")
+		createHsnCode()
+		{
+			-- It takes HSN code and GST as input from the view and updates the HSN table.
+		}
+
+		--6--
+		@PostMapping("createProductCategory")
+		createProductCategory()
+		{
+			-- It takes category id and category name as input from the view and updates the product category table.
+		}
+
+		--7--
+		@PostMapping("createProduct")
+		createProduct()
+		{
+			-- It takes product info as input from the view and updates the product table.
+		}
+
+
+6) InventoryController
+
+	--> It handles the controls of inventory home page(redirecting the inventory user pages)
+
+	--> Methods <--
+		
+		--1--
+		@GetMapping("inventoryDashboard")
+		public String getInventoryDashboard()
+		{
+			return "inventoryDashboard";
+		}
+			
+		--2--
+		@GetMapping("createIndent")
+		public String getCreateIndent()
+		{
+			return "createIndent";
+		}
+
+		--3--
+		@GetMapping("listIndent")
+		public String getListIndent()
+		{
+			return "listIndent";
+		}
+
+		--4--
+		@GetMapping("createAdjustment")
+		public String getCreateAdjustment()
+		{
+			return "createAdjustment";
+		}
+
+		--5--
+		@GetMapping("createPriceReview")
+		public String getCreatePriceReview()
+		{
+			return "createPriceReview";
+		}
+  --NEW
+
+		--6--
+		@GetMapping("listStoreIndents")
+		public String getListStoreIndents()
+		{
+			return "listStoreIndents";
+		}
+
+		--7--
+		@GetMapping("createStoreIssues")
+		public String getCreateStoreIssues()
+		{
+			return "createStoreIssues";
+		}
+
+		--8--
+		@GetMapping("listStoreIssues")
+		public String getListStoreIssues()
+		{
+			return "listStoreIssues";
+		}
+
+		--9--
+		@GetMapping("listStoreReturns")
+		public String getListStoreReturns()
+		{
+			return "listStoreReturns";
+		}
+
+
+7) IndentsController  //retruns data
+
+	--> It returns the Indents list and indent products to the view and stores the new indents in the database
+	
+	--> Methods <--
+		
+		--1--
+		@GetMapping("getIndentsList")
+		getIndentsList()
+		{
+			-- It Takes no input and send the list of indents
+		}
+
+		--2--
+		@PostMapping("getIndentProducts")
+		getIndentProducts()
+		{
+			-- It takes indent id as input and returns list of products corresponing to that indent id
+		}
+
+		--3--
+		@PostMapping("createIndentsList")
+		createIndentsList()
+		{
+			-- It takes indent data as input and updates it in the database and sends the success or failure of indent creation
+		}
+
+
+8) AdjustmentsController  //updates data
+	
+	--> It is used to adjust the stock in the Warehouse
+
+	--> Methods <--
+
+		--1--
+		@PostMapping("updateAdjustment")
+		updateAdjustment()
+		{
+			-- It takes product id, batchno, updated stock and reason from the page and updates the warehouse stock
+		}
+
+
+9) PriceReviewController  //updates data
+
+	--> It is used to adjust the sale price of the product
+
+	--> Methods <--
+
+		--1--
+		@PostMapping("updatePrice")
+		updatePrice()
+		{
+			-- It takes product id, batchno, new price and reason from the page and updates the product cost
+		}
+
+
+10) ProcurementController  //returns pages
+
+	--> It handles the controls of Procurement home page(redirecting the Procurement pages)
+
+	--> Methods <--
+
+		--1--
+		@GetMapping("procurementDashboard")
+		procurementDashboard()
+		{
+			-- It returns the procurement dashboard page
+		}
+
+		--2--
+		@GetMapping("listIndents")
+		listIndents()
+		{
+			-- It returns the list Indents page
+		}
+
+		--3--
+		@GetMapping("listPurchseOrder")
+		listPurchseOrder()
+		{
+			-- It returns the list Purchse Order page
+		}
+
+		--4--
+		@GetMapping("createPurchaseOrder")
+		createPurchaseOrder()
+		{
+			-- It returns the create Purchase Order page
+		}
+
+		--5--
+		@GetMapping("listGrn")
+		listGrn()
+		{
+			-- It returns the list Grn page
+		}
+
+		--6--
+		@GetMapping("createGrn")
+		createGrn()
+		{
+			-- It returns the create Grn page
+		}
+
+		--7--
+		@GetMapping("listPurchaseReturns")
+		listPurchaseReturns()
+		{
+			-- It returns the list Purchase Returns page
+		}
+
+		--8--
+		@GetMapping("createPurchaseReturns")
+		createPurchaseReturns()
+		{
+			-- It returns the create Purchase Returns page
+		}
+
+		--9--
+		@GetMapping("addHSN")
+		addHSN()
+		{
+			-- It returns the add HSN page
+		}
+
+		--10--
+		@GetMapping("addProductCategory")
+		addProductCategory()
+		{
+			-- It returns the add Product Category page
+		}
+
+		--11--
+		@GetMapping("addProduct")
+		addProduct()
+		{
+			-- It returns the add Product page
+		}
+
+
+11) PurchaseController  //updates data and gets data from database
+
+	--> It performs the operations on the purchases 
+	
+	--> Methods <--
+		
+		--1--
+		@GetMapping("getPurchaseList")
+		getPurchaseList()  // by purchase ID
+		{
+			-- It Takes no input and send the list of purchases.
+		}
+		
+		--2--
+		@PostMapping("getPurchaseListByDate")
+		getPurchaseListByDate()
+		{
+			-- It Takes purchase Date as input and send the list of purchases done on that date.
+		}
+		
+		--3--
+		@PostMapping("getPurchaseListByVendorId")
+		getPurchaseListByVendorId()
+		{
+			-- It Takes vendor id as input and send the list of purchases done from that vendor.
+		}
+
+		--4--
+		@PostMapping("getPurchaseProducts")
+		getPurchaseProducts()
+		{
+			-- It takes purchase id as input and returns list of products corresponing to that purchase id
+		}
+
+		--5--
+		@PostMapping("makePurchseOrder")
+		makePurchseOrder()
+		{
+			-- It takes order data as input and updates it in the purchase order table.
+		}
+
+
+12) GrnController  //updates data and gets data from database
+
+	--> It performs the operations on the purchases 
+	
+	--> Methods <--	
+		
+		--1--
+		@GetMapping("getGrnList")
+		getGrnList()  //by GRN ID
+		{
+			-- It Takes no input and send the list of GRN's.
+		}
+		
+		--2--
+		@PostMapping("getGrnListByVendorId")
+		getGrnListByVendorId()
+		{
+			-- It Takes Vendor ID as input and send the list of GRN's done from that vendor.
+		}
+		
+		--3--
+		@PostMapping("getGrnListByPurchaseDate")
+		getGrnListByPurchaseDate()
+		{
+			-- It Takes purchase Date as input and send the list of purchases done on that day.
+		}
+
+		--4--
+		@PostMapping("getGrnListByPurchaseId")
+		getGrnListByPurchaseId()
+		{
+			-- It Takes Purchase ID as input and send the list of GRN's belongs to that purchase ID.
+		}
+		
+		--5--
+		@PostMapping("getGrnProducts")
+		getGrnProducts()
+		{
+			-- It takes GRN id as input and returns list of products corresponing to that GRN id
+		}
+
+		--6--
+		@PostMapping("makeGrn")
+		makeGrn()
+		{
+			-- It takes GRN data as input and updates it in the GRN table and also the stock table.
+		}
+
+
+13) PurchaseReturnController  //updates data and gets data from database
+
+	--> It performs the operations on the purchase returns 
+	
+	--> Methods <--
+		
+		--1--
+		@GetMapping("getPurchaseReturnsList")
+		getPurchaseReturnsList()  // by purchase retrun ID
+		{
+			-- It Takes no input and send the list of purchase returns.
+		}
+		
+		--2--
+		@PostMapping("getPurchaseReturnsListByReturnDate")
+		getPurchaseReturnsListByReturnDate()
+		{
+			-- It Takes purchase returns Date as input and send the list of purchase returns done on that date.
+		}
+		
+		--3--
+		@PostMapping("getPurchaseReturnsListByVendorId")
+		getPurchaseReturnsListByVendorId()
+		{
+			-- It Takes vendor id as input and send the list of purchase returns belongs to that vendor.
+		}
+
+		--4--
+		@PostMapping("getPurchaseReturnsListByGrnId")
+		getPurchaseReturnsListByGrnId()
+		{
+			-- It Takes GRN id as input and send the list of purchase returns belongs to that GRN.
+		}
+
+		--5--
+		@PostMapping("getPurchaseReturnProducts")
+		getPurchaseReturnProducts()
+		{
+			-- It takes purchase return id as input and returns list of products corresponing to that purchase return id
+		}
+
+		--6--
+		@PostMapping("makePurchaseReturn")
+		makePurchaseReturn()
+		{
+			-- It takes purchase products data as input and updates it in the purchase returns table and also updates the stock.
+		}
+
+
+14) LoginController
+
+	--> It handles the operations like login validation and forgot password
+
+	--> Methods <--
+
+		--1--
+		@PostMapping("loginValidation")
+		loginValidation()
+		{
+			-- It takes username,password and user type as input and returns the corresponding home page.
+		}
+
+		--2--
+		@GetMapping("forgotPassword")
+		forgotPassword()
+		{
+			-- It takes no input but returns the forgot password page.
+		}
+
+		--3--
+		@PostMapping("sendOtp")
+		sendOtp()
+		{
+			-- It takes username as input and send the otp to the user and send the update password page.
+		}
+
+		--4--
+		@GetMapping("updatePassword")
+		updatePassword()
+		{
+			-- It takes otp and new password as input and validates and returns the corresponding page.
+			-- If otp is validate then it updates password and returns the login page.
+			-- Else it asks to enter the correct otp.
+		}
+
+
+15) StoreController  //Navigation
+
+
+	--> It handles the controls of Store home page(redirecting the Store pages)
+
+	--Methods--
+
+		--1--
+		@GetMapping("getStoreStock")
+		getStoreStock()
+		{
+			-- It returns the Store Stock page
+		}
+
+		--2--
+		@GetMapping("listStoreIndents")
+		listStoreIndents()
+		{
+			-- It returns the list store Indents page
+		}
+
+		--3--
+		@GetMapping("createStoreIndent")
+		createStoreIndent()
+		{
+			-- It returns the create Store Indent page
+		}
+
+		--4--
+		@GetMapping("listStoreReturns")
+		listStoreReturns()
+		{
+			-- It returns the list Store Returns page
+		}
+
+		--5--
+		@GetMapping("createStoreReturns")
+		createStoreReturns()
+		{
+			-- It returns the create Store Returns page
+		}
+
+
+16) StoreStockController  //retruning data
+
+	--> It is used to get the information regarding the Store
+
+	--> Methods <--
+		
+		--1--
+		@GetMapping("getStoreData")
+		getStoreData()
+		{
+			-- It takes no input but returns the Store categories count, total Store Products count, Store value and individual Store products count(used for graph) to the view by calling the below methods.
+		}
+
+		--2--
+		@GetMapping("getTotalStoreProductsCount")
+		getTotalStoreProductsCount()
+		{
+			-- It returns Total Store Products Count
+		}
+
+		--3--
+		@GetMapping("getStoreProductsCount")
+		getStoreProductsCount()
+		{
+			-- It returns Store Products Count and also the product name
+		}
+
+		--4--
+		@GetMapping("getStoreCategoriesCount")
+		getStoreCategoriesCount()
+		{
+			-- It returns Store Categories Count.
+		}
+
+		--5--
+		@GetMapping("getStoreValue")
+		getStoreValue()
+		{
+			-- It returns Store Value.
+		}
+
+
+17) StoreIndentController
+
+	--> It returns the Store Indents list and Store indent products to the view and stores the new Store indents in the database
+	
+	--> Methods <--
+		
+		--1--
+		@GetMapping("getStoreIndentsList")
+		getStoreIndentsList()
+		{
+			-- It Takes no input and send the list of Store indents
+		}
+
+		--2--
+		@PostMapping("getStoreIndentProducts")
+		getStoreIndentProducts()
+		{
+			-- It takes indent id as input and returns list of products corresponing to that Store indent id
+		}
+
+		--3--
+		@PostMapping("createStoreIndentsList")
+		createStoreIndentsList()
+		{
+			-- It takes Store indent data as input and updates it in the database and sends the success or failure of indent creation.
+		}
+
+
+18) StoreReturnController
+
+	--> It performs the operations on the Store returns 
+	
+	--> Methods <--
+		
+		--1--
+		@GetMapping("getStoreReturnsList")
+		getStoreReturnsList()  // by purchase retrun ID
+		{
+			-- It Takes no input and send the list of Store returns.
+		}
+		
+		--2--
+		@PostMapping("getStoreReturnsListByReturnDate")
+		getStoreReturnsListByReturnDate()
+		{
+			-- It Takes Store returns Date as input and send the list of Store returns done on that date.
+		}
+
+		--3--
+		@PostMapping("getStoreReturnProducts")
+		getStoreReturnProducts()
+		{
+			-- It takes Store return id as input and returns list of products corresponing to that Store return id
+		}
+
+		--4--
+		@PostMapping("makeStoreReturn")
+		makeStoreReturn()
+		{
+			-- It takes store return products data as input and updates it in the Store returns table and also updates the stock.
+		}
