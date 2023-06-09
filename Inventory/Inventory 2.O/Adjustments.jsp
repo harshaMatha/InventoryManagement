@@ -257,7 +257,7 @@
     <textarea id="reasonid" name="Reason" rows="4" cols="42" onblur="validateReason()"></textarea>
     <span id="reason-error" class="error-message"></span>
     
-    <button type="submit" style="margin-left: 120px">Update Stock</button>
+    <button type="submit" style="margin-left: 120px" onclick="addProduct()">Update Stock</button>
    </div>
    
    <div>
