@@ -10,6 +10,24 @@
   top: 30px;
   margin-left: 350px;
   }
+  #addedproducts{
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    #adjustmenttable
+    {
+    display:flex;
+    }
+    #products-table {
+      background-color: white;
+      height: 50px;
+      overflow-y: scroll;
+      width:400px;
+     margin-left:90px;
+    }
     body {
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
@@ -18,7 +36,7 @@
     form {
       max-width: 400px;
       margin-top: 60px;
-       margin-left: 350px;
+       margin-left: 50px;
       padding: 20px;
       background-color: #ffffff;
       border: 1px solid #ccc;
@@ -145,10 +163,59 @@
       
       return true;
     }
+    function addProduct() {
+        validateProductName();
+        validateOriginalStock();
+        validateCurrentStock();
+        validateReason();
+
+      
+
+        // Get input values
+        var productname = document.getElementById("productnameid").value;
+        var originalstock = document.getElementById("originalstockid").value;
+        var currentstock = document.getElementById("currentstockid").value;
+        var reason =  document.getElementById("reasonid").value;
+        
+
+        // Create new row in the table
+        var tableBody = document.getElementById("products-table-body");
+        var newRow = tableBody.insertRow();
+
+        // Insert cells with product details
+        var productnameCell = newRow.insertCell();
+        productnameCell.innerHTML = productname;
+
+        var originalstockCell = newRow.insertCell();
+        originalstockCell.innerHTML = originalstock;
+        
+        var currentstockCell = newRow.insertCell();
+        currentstockCell.innerHTML = currentstock;
+        
+        var reasonCell = newRow.insertCell();
+        reasonCell.innerHTML = reason;
+
+        var deleteCell = newRow.insertCell();
+        deleteCell.innerHTML = '<button class="delete-button" onclick="deleteProduct(this)">Delete</button>';
+
+        // Clear input fields
+        document.getElementById("productnameid").value = "";
+        document.getElementById("originalstockid").value = "";
+        document.getElementById("currentstockid").value = "";
+        document.getElementById("reasonid").value = "";
+      }
+
+      function deleteProduct(button) {
+        var row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      }
+    
   </script>
   
 </head>
 <body>
+<div id="adjustmenttable">
+<div>
 <h1 id ="htag" align="center">Adjustments</h1>
    <form onsubmit="return validateForm()">
     <label for="productcategoryid">Product Category:</label>
@@ -191,5 +258,29 @@
     <span id="reason-error" class="error-message"></span>
     
     <button type="submit" style="margin-left: 120px">Update Stock</button>
-  </form></body>
+   </div>
+   
+   <div>
+     <h2 align="right" style="margin-left:50px; margin-left:70px ">Adjustments List</h2>
+    </div>
+    
+<div id="addedproducts" >
+<form>
+  <table class="table bg-white rounded shadow-sm  table-hover" id="products-table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+       
+        <th>Original Stock</th>
+        <th>Current Stock</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody id="products-table-body">
+    </tbody>
+  </table>
+</form>
+ </div>
+ </div>
+  </body>
 </html>
