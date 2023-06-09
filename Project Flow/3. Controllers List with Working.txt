@@ -213,10 +213,10 @@
 		}
 
 		--4--
-		@PostMapping("getReorderLevelStock")
+		@GetMapping("getReorderLevelStock")
 		getReorderLevelStock()
 		{
-			-- It takes product id and batchno as input from the view and returns the Reorder Level Stock.
+			-- It takes no input and returns the Reorder Level Stock fields categoryname, productid, batchno, productname, currentstock, reorderlevelstock.
 		}
 
 		--5--
@@ -724,7 +724,7 @@
 		@GetMapping("getStoreIndentsList")
 		getStoreIndentsList()
 		{
-			-- It Takes no input and send the list of Store indents
+			-- It Takes no input and send the list of Store indents ID
 		}
 
 		--2--
