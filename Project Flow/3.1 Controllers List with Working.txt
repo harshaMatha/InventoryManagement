@@ -208,27 +208,34 @@
 		}
 
 		--4--
+		@PostMapping("getCost")
+		getStock()
+		{
+			-- It takes product id and batchno as input from the view and returns the cost.
+		}
+
+		--5--
 		@PostMapping("getReorderLevelStock")
 		getReorderLevelStock()
 		{
 			-- It takes product id and batchno as input from the view and returns the Reorder Level Stock.
 		}
 
-		--5--
+		--6--
 		@PostMapping("createHsnCode")
 		createHsnCode()
 		{
 			-- It takes HSN code and GST as input from the view and updates the HSN table.
 		}
 
-		--6--
+		--7--
 		@PostMapping("createProductCategory")
 		createProductCategory()
 		{
 			-- It takes category id and category name as input from the view and updates the product category table.
 		}
 
-		--7--
+		--8--
 		@PostMapping("createProduct")
 		createProduct()
 		{
@@ -317,21 +324,21 @@
 		@GetMapping("getIndentsList")
 		getIndentsList()
 		{
-			-- It Takes no input and send the list of indents
+			-- It Takes no input and send the list of indent ID's.
 		}
 
 		--2--
 		@PostMapping("getIndentProducts")
 		getIndentProducts()
 		{
-			-- It takes indent id as input and returns list of products corresponing to that indent id
+			-- It takes indent id as input and returns list of products corresponing to that indent id.
 		}
 
 		--3--
 		@PostMapping("createIndentsList")
 		createIndentsList()
 		{
-			-- It takes indent data as input and updates it in the database and sends the success or failure of indent creation
+			-- It takes indent data as input and updates it in the database and sends the success or failure of indent creation.
 		}
 
 
@@ -566,7 +573,7 @@
 		@PostMapping("sendOtp")
 		sendOtp()
 		{
-			-- It takes username as input and send the otp to the user and send the update password page.
+			-- It takes username or email as input and send the otp to the user and send the update password page.
 		}
 
 		--4--
