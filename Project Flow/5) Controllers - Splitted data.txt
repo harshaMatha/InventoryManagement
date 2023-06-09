@@ -1,0 +1,55 @@
+Gowri Shankar --> 10(7+3) methods
+	- ProductController
+	- StoreIndentController
+
+Sanjana --> 12(3+1+3+5) methods
+	- PurchaseController
+	- PriceReviewController
+	- IndentsController
+	- StoreController
+
+Tarakesh --> 10(6+4) methods
+	- WarehouseController
+	- LoginController
+
+Sai Kumar --> 16(5+3+8) methods
+	- StoreStockController
+	- PurchaseReturnController
+	- AdminController
+
+Hari krishna --> 16(3+1+3+9) methods
+	- StoreReturnController
+	- AdjustmenstController
+	- UserController
+	- InventoryController
+
+Harsha --> 18(3+4+11) methods
+	- GrnController
+	- VendorController
+	- ProcurementController
+
+-- 1) VendorController - 4 methods - processing 
+-- 3) UserController - 3 methods - processing
+-- 4) WarehouseController - 6 methods - processing
+-- 5) ProductController - 7 methods - processing
+-- 7) IndentsController - 3 methods - processing
+-- 8) AdjustmentsController - 1 method - processing
+-- 9) PriceReviewController - 1 method - processing
+-- 14) LoginController - 4 methods - processing
+-- 16) StoreStockController - 5 methods - processing
+-- 17) StoreIndentController - 3 methods - processing
+
+
+-- 2) AdminController - 8 methods - redirection only
+-- 6) InventoryController - 9 methods - redirection
+-- 10) ProcurementController - 11 methods - redirection
+-- 15) StoreController - 5 methods - redirection
+
+
+-- 11) PurchaseController - 3 methods (includes filters) - processing
+-- 12) GrnController - 3 methods (includes filters) - processing
+-- 13) PurchaseReturnController - 3 methods (includes filters) - processing
+-- 18) StoreReturnController - 3 methods (includes filters) - processing
+
+
+
