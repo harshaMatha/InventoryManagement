@@ -1,0 +1,48 @@
+1.Product categories 
+  -product categories table 
+  -products table   
+  -products stock table  
+2.Add users 
+  -users table for inventory and procurement users  
+  - Vendor table for vendor
+3.Warehouse home page
+   -products stock table
+   -products category table
+4.Adjustments
+   - products stock
+5.Price Review 
+   - products stock
+6.Create Indent
+   -indent products
+   -indents
+   -products
+7.Indents list
+   -indents_Products
+   -Indents
+8.List purchase orders
+   -Purchase_Order
+   -Purchase_Order_Products
+9.Create purchase(indents)
+   -indents_Products
+   -Indents
+   -Purchase_Order
+   -Purchase_Order_Products
+10.Create Purchase Order(Scratch)
+   -Products
+   -Purchase_Order
+   -Purchase_Order_Products
+11.Create GRN
+   -Purchase_Order_Products
+   -GRN_Products
+   -GRN
+12.List GRN
+   -GRN_Products
+   -GRN
+13.Create PRN
+   -Purchase_Return
+   -Purchase_Return_Products
+   -GRN_Products
+   -GRN
+14.List PRN
+   -Purchase_Return
+   -Purchase_Return_Products
