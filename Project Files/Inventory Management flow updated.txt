@@ -1,0 +1,83 @@
+Inventory Management
+	-31st May2023
+
+=> Users
+	-Procurement Users
+	-Warehouse/Inventory users
+	-Store users
+	-Main Admin users
+
+=> Options
+
+Dashboard
+	-All summary counts
+		-No of products, Value of the products
+		-No of diff categories
+		-Graphs/charts
+	
+Procurement
+	Main Indents
+		-List Indents with filters
+	Purchase Orders
+		-List purchase orders with filters
+		-Create purchase order(from scratch)
+		-Create New purchase order (based on ident)
+
+	GRNs (Goods REciept Notes)
+		-List GRNs with filters
+		-Create GRN based on PO
+			-We can have multiple GRN's for the same PO
+			-Update the stock on creating new GRN
+			-If we have rack & bin concept,update location also at the time of GRN entry
+	Purchase Returns
+		-List PRNs with filters
+		-Create PRN based on GRN
+			-We can have multiple PRN's for the same GRN
+			-If we have rack & bin concept,update location also at the time of return
+
+Inventory
+	Main Indents
+		-List Indents with filters
+		-Create Indent(from scratch)
+		-Create Indent based on Reorder level
+	Stock
+		-Current Stock with filters
+			-View Item/Product info
+				-show all details along with price, location and all
+		-Opening Stock with filters
+		-Closing STock with filters
+
+	Reorder Level
+		-Show products that have come down to reorder level
+	Adjustment
+		-List Adjustments
+			-create adjustment
+
+	note: stock with rooms,racks & bins 
+
+	Price Review
+		-List preview price reviews
+		-Create new price review	
+
+Stores
+	-List stores with filters
+	-Issue to Storees (based on the manaul Indent)
+	-Create Issue to the Store
+	-Store Indents
+		-List Store Indents with filters
+		-Create Store Indent(from scratch)
+		-Create Store Indent based on Reorder level
+	-Store Returns
+		-List Store Returns
+		-If we have rack & bin concept,update location also at the time of return
+	
+Master Entry
+	-vendors/Suppliers
+	-Product Categories
+	-Products(Define along with reorder level)
+	
+
+Reports
+
+	
+

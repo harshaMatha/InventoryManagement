@@ -1,0 +1,141 @@
+Database of the Project
+
+ItemTypes			=> Master Entry
+This table stores different types of items
+
+itty_id		char(4)		MBPH/TBLT/ACCS
+itty_title	varchar(50)
+itty_Desc
+
+Brands				=> Master Entry
+This table stores different brands
+
+brnd_id		char(4)		SMNG/APLE/
+brnd_title	v(50)		Samsung/Apple/nokia/Micromax
+brnd_catg	char(4)		LOCL/INTR
+brnd_desc		
+
+ItemsMaster			=> Master Entry
+This table stores different items
+
+item_id			int		PK_ITEM
+item_itty_id		char(4)		FK(PK_ITTY)
+item_Catg		char(1)		A/B/C
+item_title		varchar(100)
+item_brnd_id		char(4)		FK(PK_BRND)
+item_os_type		char(4)		ANDR/IOSP
+item_deviceversion
+item_osversion
+item_reldate
+item_avldate
+item_reoorderlevel	int		//what is the stock to be maintained till we get fresh stock
+item_minstock		int		
+item_maxstock		int
+
+ItemSpecifications			=> Master Entry
+This table stores different specifications of items
+
+item_id			int
+itsp_index		int		//spec index
+itsp_group		varchar(200)	//Grouping in Spec
+itsp_title		varchar(100)	//spec name
+itsp_value		varchar(100)	//spec value
+
+ItemSTock
+This table stores different items stock that is available in your godown.
+
+item_id			int
+item_batcno		varchar(20)	comp PK(1,2)
+item_stock		number		//qty of the item
+item_saleprice		number
+item_costprice		number
+item_mrp		number
+
+Adjustments
+Stores all adjustments
+
+adjs_id			int
+adjs_adate		date
+adjs_desc		v(100)
+
+Adjustmentitems
+This table stores different items that are adjusted
+
+adjs_id			int
+item_id			int
+item_qty		number
+item_mode		c(3)	ADD/RMV
+
+
+Outlets					=> Master Entry
+This table stores different outlets that we have
+
+outl_id			int		PK_OUTL
+outl_location		v(100)
+outl_address		v(100)
+outl_cperson		v(50)
+outl_cmobile		int
+outl_phone		int
+outl_email		v(100)
+
+Indents
+This table stores all indent requests
+
+indn_id			int
+indn_outlet		int		FK(PK_OUTL)
+indn_date		date
+indn_amount		numeric
+indn_status		char(2)
+
+IndentItems
+This table stores all indent ITems(means item requests)
+
+indn_id			int
+indn_item_id		int
+init_qty		int
+
+
+StoreIndents
+This table stores all Store indent requests
+
+sind_id			int
+sind_stor_id		int		FK(PK_STOR)
+sind_outlet		int		FK(PK_OUTL)
+sind_date		date
+sind_amount		numeric
+sind_status		char(2)
+
+StoreIndentItems
+This table stores all indent ITems(means item requests)
+
+sind_id			int
+sind_item_id		int
+sind_qty		int
+
+
+Stores
+This table stores all details of the store
+
+stor_id			int
+stor_name
+stor_desc
+stor_cdate
+stor_status
+
+StockIssues
+This table stores all stock issues. Usually we issue the stock based on idennts(requests).
+
+issu_id			int
+issu_indn_id		int	FK(PK_Indn)	can be null.
+issu_stor_id		int		
+issu_date		date
+issu_amount		numeric	//total amount
+
+StockISsueItems
+This table stores all items associated with Stock issues
+
+issu_id			int
+issu_item_id		int
+isit_batchno		varchar(20)
+isit_qty		int
+isit_price		numeric
