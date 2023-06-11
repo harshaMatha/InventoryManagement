@@ -1,4 +1,4 @@
-package controller;
+package controllers;
 
 
 import org.springframework.stereotype.Controller;
@@ -25,5 +25,25 @@ public class InventoryController {
 	public String CallPriceReview() {
 		return "PriceReview";
 	}
-
+	@RequestMapping(value = "/createStoreIndentButton")
+	public String CreateStoreIndent() {
+		return "createStoreIndent";
+	}
+	@RequestMapping(value = "/storeIssuedIndentsButton")
+	public String StoreIssuedIndents() {
+		return "StoreIssuedIndents";
+	}
+	@RequestMapping(value = "/issuedProductsButton")
+	public String IssuedProductsIndents() {
+		return "IssuedProducts";
+	}
+	@RequestMapping(value = "/storeReturnsButton")
+	public String StoreReturns() {
+		return "StoreReturns";
+	}
+	
+	@RequestMapping(value = "/storeReturnsProductsButton")
+	public String StoreReturnsProducts() {
+		return "StoreReturnProducts";
+	}
 }
