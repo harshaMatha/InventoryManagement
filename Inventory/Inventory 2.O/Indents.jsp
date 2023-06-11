@@ -76,8 +76,7 @@
       background-color: white;
       height: 50px;
       overflow-y: scroll;
-      width:400px;
-     margin-left:90px;
+      width:1000px;
     }
     #total_indent
     {
@@ -94,12 +93,12 @@
     
         #Product-details-table {
        background-color: white;
-      width:420px;
+      width:350px;
 
     }
            #reorder-level-table {
       background-color: white;
-      width:420px;
+      width:350px;
 
     }
     
@@ -145,7 +144,7 @@
       margin-bottom: 5px;
     }
     #createIndentButtonId{
-    margin-left:260px;
+    margin-left:450px;
     border-radius:6px;
     width:80px;
     height:40px;
@@ -169,6 +168,34 @@
       font-size: 12px;
       margin-top: 5px;
     }
+    #products-table input{
+    
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 80px;
+    }
+    .delete-btn{
+    
+        background-color: #ff0000;
+      color: #fff;
+      border: none;
+       color: white;
+      font-weight: bold;
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius:6px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .add-btn,.add-btn1{
+    border-radius:6px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
   </style>
 </head>
@@ -177,8 +204,8 @@
   <h2 align="center" style="padding-left: 110px; margin-bottom: 50px">Create Indent</h2>
   </div>
     <div  align="center" style="margin-right: 70px; margin-bottom: 30px" id="products-dropdown">
-    <label for="product-category" style="padding-right:10px; font-size:23px">Product Category </label>
-    <select id="product-category">
+    <label for="product-category" style="padding-right:10px; font-size:16px">Product Category </label>
+    <select id="product-category" style="width:100px">
       <option value="category1">Soaps & Lotions</option>
       <option value="category2">Category 2</option>
       <option value="category3">Category 3</option>
@@ -194,65 +221,65 @@
      
       <thead>
         <tr>
-          <th>Product Category</th>
           <th>Product ID</th>
           <th>Product Name</th>
           <th>Batch No.</th>
           <th>Stock</th>
+          <th>Add</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td></td>
           <td>101</td>
           <td>Pears Soap</td>
           <td>14268</td>
           <td>50</td>
+          <td><button class="add-btn">Add</button></td>
           
         </tr>
         
         <tr>
-         <td></td>
           <td>102</td>
           <td>Santoor Soap</td>
           <td>14267</td>
           <td>50</td>
+          <td><button class="add-btn">Add</button></td>
         </tr>
         <tr>
-         <td></td>
          <td>103</td>
           <td>Rexona Soap</td>
           <td>14266</td>
           <td>50</td>
+          <td><button class="add-btn">Add</button></td>
         </tr>
         <tr>
-         <td></td>
        <td>104</td>
           <td>Lifebuoy Soap</td>
           <td>14269</td>
           <td>50</td>
+          <td><button class="add-btn">Add</button></td>
         </tr>
         <!-- Add more rows -->
         <tr>
-         <td></td>
           <td>101</td>
           <td>Pears Soap</td>
           <td>14268</td>
           <td>50</td>
+          <td><button class="add-btn">Add</button></td>
         </tr>
         <tr>
-         <td></td>
            <td>101</td>
           <td>Pears Soap</td>
           <td>14268</td>
           <td>50</td>
+          <td><button class="add-btn">Add</button></td>
         </tr>
        
       </tbody>
     </table>
 </div>
 </div>
-<div style="margin-left:50px; margin-left:70px ">
+<div style="margin-left:50px;">
 
  <h3 align="center">Products Details</h3>
  <div id="second_table">
@@ -264,6 +291,7 @@
           <th>Product Name</th>
           <th>Batch No.</th>
           <th>Stock</th>
+          <th>Add</th>
         </tr>
       </thead>
       <tbody>
@@ -273,7 +301,7 @@
           <td>Pears Soap</td>
           <td>14268</td>
           <td>50</td>
-          
+           <td><button class="add-btn1">Add</button></td>
         </tr>
         <tr>
          
@@ -281,6 +309,7 @@
           <td>Santoor Soap</td>
           <td>14267</td>
           <td>50</td>
+          <td><button class="add-btn1">Add</button></td>
         </tr>
         <tr>
         
@@ -288,6 +317,7 @@
           <td>Rexona Soap</td>
           <td>14266</td>
           <td>50</td>
+          <td><button class="add-btn1">Add</button></td>
         </tr>
         <tr>
          
@@ -295,6 +325,7 @@
           <td>Lifebuoy Soap</td>
           <td>14269</td>
           <td>50</td>
+          <td><button class="add-btn1">Add</button></td>
         </tr>
         <!-- Add more rows -->
         <tr>
@@ -303,6 +334,7 @@
           <td>Pears Soap</td>
           <td>14268</td>
           <td>50</td>
+          <td><button class="add-btn1">Add</button></td>
         </tr>
         <tr>
          
@@ -310,6 +342,7 @@
           <td>Pears Soap</td>
           <td>14268</td>
           <td>50</td>
+          <td><button class="add-btn1">Add</button></td>
         </tr>
        
       </tbody>
@@ -318,107 +351,103 @@
   </div>
 </div>
 
-<h2 align="center" style="margin-left:60px; margin-bottom:20px">Indent</h2>
-
-   <form id="product-form">
-  <div class="form-input-container">
-    <label class="form-label" for="productid" style="padding-right:10px; padding-top:10px">Product ID:</label>
-    <div><input class="form-input" type="text" id="productid_id" required onblur="validateProductID()"><br>
-    <span id="productid-error" class="error-message"></span> </div>
-    </div>
-
-  <div class="form-input-container">
-    <label class="form-label" for="requiredstock" style="padding-top:10px; padding-right:10px">Required Stock:</label>
-    <div>
-    <input class="form-input" type="number" id="requiredstockid" required onblur="validateRequiredStock()"><br>
-    
-<span id="requiredstock-error" class="error-message"></span></div>
-</div>
-  <button class="addProductsButtonClass" type="button" onclick="addProduct()">Add Product</button>
-</form>
-
-  <h2 align="center" style="margin-left:60px; margin-bottom:20px">Indents List</h2>
-<div id="addedproducts" >
-<form>
-  <table class="table bg-white rounded shadow-sm  table-hover" id="products-table">
-    <thead>
-      <tr>
-        <th>Product ID</th>
-       
-        <th>Required Stock</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="products-table-body">
-    </tbody>
-  </table>
-
-
-    <input type="submit" value="Submit" id="createIndentButtonId">
+ <div id="warning-message" class="warning" style="display: none;"></div>
+   <h2 align="center" style="margin-bottom:20px">Indents List</h2>
+   <div id="addedproducts" >
+       <form>
+          <table class="table bg-white rounded shadow-sm  table-hover" id="products-table">
+           <thead>
+              <tr>
+                 <th>Product ID</th>
+                 <th>Product Name</th>
+                 <th>Batch No.</th>
+                 <th>Stock</th>
+                 <th>Required Stock</th>
+                 <th>Action</th>
+             </tr>
+           </thead>
+           <tbody >
+           </tbody>
+          </table>
+          <button type="button" id="createIndentButtonId">Create</button>
   </form>
 </div>
  <script>
-    function validateProductID() {
-      var productIDInput = document.getElementById("productid_id");
-      var productIDError = document.getElementById("productid-error");
+ var firstTable = document.getElementById('reorder-level-table');
+ var secondTable = document.getElementById('Product-details-table');
+ var selectedTable = document.getElementById('products-table');
+ var addButtons = firstTable.getElementsByClassName('add-btn');
+ var addButtons1 = secondTable.getElementsByClassName('add-btn1');
+ 
+          // Function to add a row to the selected table
+    function addRowToSelectedTable(row) {
+    
+   
+      var cells = row.cells;
+      var field1 = cells[0].textContent;
+      var field2 = cells[1].textContent;
+      var field3 = cells[2].textContent;
+      var field4 = cells[3].textContent;
 
-      if (productIDInput.value.trim() === "") {
-        productIDError.textContent = "Product ID is required";
-      } else {
-        productIDError.textContent = "";
+      var newRow = document.createElement('tr');
+
+      var field1Cell = document.createElement('td');
+      field1Cell.textContent = field1;
+
+      var field2Cell = document.createElement('td');
+      field2Cell.textContent = field2;
+
+      var field3Cell = document.createElement('td');
+      field3Cell.textContent = field3;
+
+      var field4Cell = document.createElement('td');
+      field4Cell.textContent = field4;
+
+      var quantityCell = document.createElement('td');
+      var quantityInput = document.createElement('input');
+      quantityInput.type = 'number';
+      quantityInput.value = 1;
+      quantityCell.appendChild(quantityInput);
+
+      var actionCell = document.createElement('td');
+      var deleteButton = document.createElement('button');
+      deleteButton.classList.add('delete-btn');
+      deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', function() {
+        deleteRowFromSelectedTable(newRow);
+      });
+      actionCell.appendChild(deleteButton);
+
+      newRow.appendChild(field1Cell);
+      newRow.appendChild(field2Cell);
+      newRow.appendChild(field3Cell);
+      newRow.appendChild(field4Cell);
+      newRow.appendChild(quantityCell);
+      newRow.appendChild(actionCell);
+
+      selectedTable.querySelector('tbody').appendChild(newRow);
+    }
+
+    // Function to delete a row from the selected table
+    function deleteRowFromSelectedTable(row) {
+      selectedTable.querySelector('tbody').removeChild(row);
+    }
+
+    // Attach click event listeners to the add buttons
+    for (let i = 0; i < addButtons.length; i++) {
+      var addButton = addButtons[i];
+      addButton.addEventListener('click', function() {
+    	  var row = this.parentNode.parentNode;
+        addRowToSelectedTable(row);
+      });
+    }
+    for (let i = 0; i < addButtons1.length; i++) {
+        var addButton1 = addButtons1[i];
+        addButton1.addEventListener('click', function() {
+        	var row1 = this.parentNode.parentNode;
+            addRowToSelectedTable(row1);
+        });
       }
-    }
-
-    function validateRequiredStock() {
-      var requiredStockInput = document.getElementById("requiredstockid");
-      var requiredStockError = document.getElementById("requiredstock-error");
-
-      if (requiredStockInput.value.trim() === "") {
-        requiredStockError.textContent = "Required Stock is required";
-      } else {
-        requiredStockError.textContent = "";
-      }
-    }
-
-    function addProduct() {
-      validateProductID();
-      validateRequiredStock();
-
-      // Check if there are any errors
-      var productIDError = document.getElementById("productid-error").textContent;
-      var requiredStockError = document.getElementById("requiredstock-error").textContent;
-
-      if (productIDError !== "" || requiredStockError !== "") {
-        return; // Exit the function if there are errors
-      }
-
-      // Get input values
-      var productid = document.getElementById("productid_id").value;
-      var requiredstock = document.getElementById("requiredstockid").value;
-
-      // Create new row in the table
-      var tableBody = document.getElementById("products-table-body");
-      var newRow = tableBody.insertRow();
-
-      // Insert cells with product details
-      var productidCell = newRow.insertCell();
-      productidCell.innerHTML = productid;
-
-      var requiredstockCell = newRow.insertCell();
-      requiredstockCell.innerHTML = requiredstock;
-
-      var deleteCell = newRow.insertCell();
-      deleteCell.innerHTML = '<button class="delete-button" onclick="deleteProduct(this)">Delete</button>';
-
-      // Clear input fields
-      document.getElementById("productid_id").value = "";
-      document.getElementById("requiredstockid").value = "";
-    }
-
-    function deleteProduct(button) {
-      var row = button.parentNode.parentNode;
-      row.parentNode.removeChild(row);
-    }
   </script>
 </body>
 </html>
