@@ -5,33 +5,60 @@
 <head>
   <title>Adjustments</title>
   <style>
-  #htag{
-  position: relative;
-  top: 30px;
-  margin-left: 350px;
-  }
-  #addedproducts{
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-    }
     #adjustmenttable
     {
-    display:flex;
+     display:flex;
     }
     #products-table {
       background-color: white;
       height: 50px;
       overflow-y: scroll;
-      width:400px;
-     margin-left:90px;
+      width:350px;
+     margin-left:0px;
+     margin-right:500px;
     }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
+    #addedproducts
+    {
+      position:relative;
+      margin-left:150px;
+      margin-top:55px;
     }
+     #headingtag
+    {
+      position:relative;
+      right:1000px;
+    }
+    
+      table {
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+    text-align:center;
+      border: 1px solid black;
+      padding: 8px;
+      
+    vertical-align: middle; /* Adjust the alignment as needed (top, middle, bottom) */
+  
+    }
+    
+    .delete-button {
+      background-color: #f44336;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+       font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius:6px;
+    }
+    
+
 
     form {
       max-width: 400px;
@@ -214,10 +241,12 @@
   
 </head>
 <body>
+<h1 style="margin-left:450px ; margin-top:10px">Adjustments</h1>
 <div id="adjustmenttable">
-<div>
-<h1 id ="htag" align="center">Adjustments</h1>
-   <form onsubmit="return validateForm()">
+
+<div style="margin-left:70px; margin-top:40px">
+
+   <form onsubmit="return validateForm()" >
     <label for="productcategoryid">Product Category:</label>
     <select id="productcategoryid" name="ProductCategory" onblur="validateProductCategory()">
       <option value="">Select Category</option>
@@ -257,30 +286,32 @@
     <textarea id="reasonid" name="Reason" rows="4" cols="42" onblur="validateReason()"></textarea>
     <span id="reason-error" class="error-message"></span>
     
-    <button type="submit" style="margin-left: 120px" onclick="addProduct()">Update Stock</button>
-   </div>
+    <button type="button" style="margin-left: 120px;  background-color: #4CAF50; color:white; border: none; border-radius: 5px; width: 120px; height: 40px;" onclick="addProduct()">Update Stock</button>
+  </div>
    
-   <div>
-     <h2 align="right" style="margin-left:50px; margin-left:70px ">Adjustments List</h2>
-    </div>
-    
-<div id="addedproducts" >
-<form>
+   <div id="addedproducts">
+
+         <h4 style="margin-left:100px; margin-bottom:20px; font-weight:bold">Adjustments List</h4>
+     <form>
   <table class="table bg-white rounded shadow-sm  table-hover" id="products-table">
     <thead>
       <tr>
         <th>Product Name</th>
-       
         <th>Original Stock</th>
         <th>Current Stock</th>
         <th>Reason</th>
+         <th>Action</th>
       </tr>
     </thead>
     <tbody id="products-table-body">
     </tbody>
   </table>
 </form>
- </div>
+   </div> 
+    
+
+
+
  </div>
   </body>
 </html>
