@@ -169,7 +169,7 @@
                 </i>Store</button>
                    <ul class="dropdown-menu" aria-labelledby="storeDropDownId">
                       <li><button class="dropdown-item" onclick="Myfunction('storeIssuedIndentsButton')">Issued Indents</button></li>
-                      <li><button class="dropdown-item" onclick="Myfunction('createStoreIndentButton')">Create Indent</button></li>
+                      <li><button class="dropdown-item" onclick="Myfunction('createStoreIssueButton')">Create Store Issue</button></li>
            			  <li><button class="dropdown-item" onclick="Myfunction('storeReturnsButton')">Store Returns</button></li>
                    </ul>
            </div>         
