@@ -125,7 +125,7 @@
 
 		--3--
 		@PostMapping("editStoreUser")
-		editStoreVendor()
+		editStoreUser()
 		{
 			-- It takes the store user information (id, name, address, contact Info, status) from the view and updates the Store user data(name, address, contactInfo, Status)
 		}
