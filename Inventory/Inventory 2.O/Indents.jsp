@@ -114,6 +114,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-left:70px;
       
     
     }
@@ -159,8 +160,9 @@
     #products-dropdown
     {
     display:flex;
-     margin-left:650px;
-     padding-bottom:5px;
+     margin-left:750px;
+     padding-bottom:10px;
+     margin-bottom:10px;
      
     }
      .error-message {
@@ -203,7 +205,7 @@
 <div id="htag">
   <h2 align="center" style="padding-left: 110px; margin-bottom: 50px">Create Indent</h2>
   </div>
-    <div  align="center" style="margin-right: 70px; margin-bottom: 30px" id="products-dropdown">
+    <div id="products-dropdown">
     <label for="product-category" style="padding-right:10px; font-size:16px">Product Category </label>
     <select id="product-category" style="width:100px">
       <option value="category1">Soaps & Lotions</option>
@@ -213,7 +215,7 @@
     </select>
   </div>
   <div class="table-container">
-  <div style="margin-right:50px; margin-left:60px ">
+  <div style="margin-right:50px; margin-left:150px ">
    <h3 align="center">Reorder Level Details</h3>
     <div  id="first_table">
    
@@ -351,7 +353,6 @@
   </div>
 </div>
 
- <div id="warning-message" class="warning" style="display: none;"></div>
    <h2 align="center" style="margin-bottom:20px">Indents List</h2>
    <div id="addedproducts" >
        <form>
