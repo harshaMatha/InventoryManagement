@@ -12,10 +12,7 @@
       width:1000px;
   
   }
-    #htag{
-  position: relative;
-  top: 20px;
-  }
+
     table {
       border-collapse: collapse;
       margin-bottom: 20px;
@@ -55,7 +52,7 @@
 </head>
 <body>
   <h2 align="center">Issues Products</h2>
-  <div style="margin-bottom:20px">
+  <div style="margin-bottom:20px;  margin-left:50px;">
    <div id="products-dropdown" align="right">
     <label for="product-category">Product Category</label>
     <select id="product-category">
