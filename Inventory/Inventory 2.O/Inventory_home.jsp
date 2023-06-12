@@ -10,12 +10,9 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
       <title>Inventory Home Page</title>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/inventory_home.css">
-       
-       
-       
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script> <!-- Include the Bootstrap JavaScript library -->
+      <script>
    
     function Myfunction(controllerUrl) {
 
@@ -122,6 +119,19 @@
          margin-left: -15rem;
          }
          }
+          .dropdown-menu {
+            background-color: #c1efde;
+            color: var(--main-text-color);
+         }
+         .dropdown-item {
+            background-color: #c1efde;
+            color: black;
+            font-weight: bold;
+         }
+         .dropdown-item:hover {
+            background-color:white ;
+            color:#009d63;
+         }
       </style>
 
    </head>
@@ -135,31 +145,41 @@
             <span class="material-symbols-outlined">warehouse</span>Pennant Inventory
          </div>
          <div class="list-group list-group-flush my-3">
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active" onclick="Myfunction('wareHouseButton')">
-            <span class="material-symbols-outlined">inventory</span>Warehouse Stock</a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="indentsButton" onclick="Myfunction('indentsButton')" >
+            <button class="list-group-item list-group-item-action bg-transparent second-text active" onclick="Myfunction('wareHouseButton')">
+            <span class="material-symbols-outlined">inventory</span>Warehouse Stock</button>
+            <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="indentsButton" onclick="Myfunction('indentsButton')" >
             <i><span class="material-symbols-outlined">
             order_approve
-            </span></i> Create Indent</a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="adjustmentsButton" onclick="Myfunction('adjustmentsButton')">
+            </span></i> Create Indent</button>
+            <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="adjustmentsButton" onclick="Myfunction('adjustmentsButton')">
             <span class="material-symbols-outlined">
             equalizer
             </span>
-            Adjustments</a> 
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="priceReviewButton" onclick="Myfunction('priceReviewButton')">
+            Adjustments</button> 
+            <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="priceReviewButton" onclick="Myfunction('priceReviewButton')">
             <i>
             <span class="material-symbols-outlined">
             currency_rupee
             </span></i>
-            Price Review</a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-               class="fas fa-shopping-cart me-2"></i>Store</a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-               class="fas fa-power-off me-2"></i>Logout</a>
+            Price Review</button>
+            <div class="dropdown">
+            <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold dropdown-toggle" role="button" id="storeDropDownId" data-bs-toggle="dropdown" aria-expanded="false" >
+            
+                <i class="fas fa-shopping-cart me-2"  >
+                </i>Store</button>
+                   <ul class="dropdown-menu" aria-labelledby="storeDropDownId">
+                      <li><button class="dropdown-item" onclick="Myfunction('storeIssuedIndentsButton')">Issued Indents</button></li>
+                      <li><button class="dropdown-item" onclick="Myfunction('createStoreIndentButton')">Create Indent</button></li>
+           			  <li><button class="dropdown-item" onclick="Myfunction('storeReturnsButton')">Store Returns</button></li>
+                   </ul>
+           </div>         
+               
+            <button class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+               class="fas fa-power-off me-2"></i>Logout</button>
          </div>
       </div>
       <div id="content">
-      kewjkjfljl
+      <h1 Style="margin:300px">Inventory Home Page</h1>
       </div>
       </div>
    </body>
