@@ -277,3 +277,37 @@ FOREIGN KEY (Store_ID)
 REFERENCES im_stores(Store_ID)
 );
 
+
+--18.—---------------------------------Indents ---------------------------------------
+
+create sequence im_Store_Indents_id
+start 2501
+increment 1;
+
+CREATE Table im_Indents (
+Store_ID int references im_stores(store_id),
+Indents_ID int default nextval('im_indents_id'),
+PRIMARY KEY (store_id,Indents_id),
+Indents_Date date,
+Indents_Status VArChar(20),
+User_ID Int,
+Last_Updated_User varchar(20),
+Last_Updated_Date date
+);
+
+
+--19.—-------------------------------------Indents_Products---------------------------------------
+
+
+CREATE Table im_Indents_Products (
+Indents_ID INT,
+Indents_Products_ID int,
+Indents_Products_Quantity Int,
+PRIMARY KEY (Indents_ID, Indents_Products_ID),
+CONSTRAINT FK_I_ID
+FOREIGN KEY (Indents_ID)
+REFERENCES im_Indents(Indents_ID),
+CONSTRAINT FK_P_ID
+FOREIGN KEY (Indents_Products_ID)
+REFERENCES im_Products(Product_ID)
+);
