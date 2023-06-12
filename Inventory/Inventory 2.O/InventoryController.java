@@ -25,9 +25,9 @@ public class InventoryController {
 	public String CallPriceReview() {
 		return "PriceReview";
 	}
-	@RequestMapping(value = "/createStoreIndentButton")
-	public String CreateStoreIndent() {
-		return "CreateStoreIndent";
+	@RequestMapping(value = "/createStoreIssueButton")
+	public String CreateStoreIssue() {
+		return "CreateStoreIssue";
 	}
 	@RequestMapping(value = "/storeIssuedIndentsButton")
 	public String StoreIssuedIndents() {
