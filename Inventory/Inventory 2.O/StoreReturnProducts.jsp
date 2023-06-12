@@ -55,7 +55,7 @@
 </head>
 <body>
   <h2 align="center">Store Returns List</h2>
-  <div style="margin-bottom:20px">
+  <div style="margin-bottom:20px; margin-left:50px;">
    <div id="products-dropdown" align="right">
     <label for="product-category">Product Category</label>
     <select id="product-category">
