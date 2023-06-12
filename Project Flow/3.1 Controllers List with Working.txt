@@ -629,45 +629,35 @@
 		}
 
 
-16) StoreStockController  //retruning data
+16) StoreIssuesController  //retruning data
 
-	--> It is used to get the information regarding the Store
-
-	--> Methods <--
+	--> It performs the operations of issuing products to the Stores 
+	
+	--> Methods <--	
 		
 		--1--
-		@GetMapping("getStoreData")
-		getStoreData()
+		@PostMapping("getStoreIssuesList")
+		getStoreIssuesList()  //by GRN ID
 		{
-			-- It takes no input but returns the Store categories count, total Store Products count, Store value and individual Store products count(used for graph) to the view by calling the below methods.
+			-- It Takes filters as input and send the list of Store Issues based on filters.
+			--filters
+				- By Store Id
+				- By Issue Date
+				- By Issue Id
 		}
-
+		
 		--2--
-		@GetMapping("getTotalStoreProductsCount")
-		getTotalStoreProductsCount()
+		@PostMapping("getStoreIssueProducts")
+		getStoreIssueProducts()
 		{
-			-- It returns Total Store Products Count
+			-- It takes Store Issue id as input and returns list of products corresponing to that Issue id
 		}
 
 		--3--
-		@GetMapping("getStoreProductsCount")
-		getStoreProductsCount()
+		@PostMapping("makeStoreIssue")
+		makeStoreIssue()
 		{
-			-- It returns Store Products Count and also the product name
-		}
-
-		--4--
-		@GetMapping("getStoreCategoriesCount")
-		getStoreCategoriesCount()
-		{
-			-- It returns Store Categories Count.
-		}
-
-		--5--
-		@GetMapping("getStoreValue")
-		getStoreValue()
-		{
-			-- It returns Store Value.
+			-- It takes products data and store id as input and updates it in the Store Issue table and also the stock table.
 		}
 
 
