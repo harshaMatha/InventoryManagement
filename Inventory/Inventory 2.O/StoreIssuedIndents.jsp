@@ -11,6 +11,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding-top: 10px;
+            margin-left:170px;
         }
 
         .issues-block {
@@ -21,17 +22,13 @@
             background-color: #fff;
         }
 
-        .bus-block:hover {
+        .issues-block:hover {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             background-color:#d8f2f0 ;
             
             
         }
 
-        .bus-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
 
         .issue-details{
             display: flex;
@@ -110,7 +107,7 @@
                 
                 
                 <div>
-                <button type="submit" value="show" class="btn-issues" onclick="ProductsList('issuedProductsButton')">View Products</button>
+                <button type="button" value="show" class="btn-issues" onclick="ProductsList('issuedProductsButton')">View Products</button>
                 </div>
             </div>
             <% 
