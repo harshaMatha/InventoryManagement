@@ -1,4 +1,4 @@
-package controller;
+package com.shankar.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,6 @@ public class InventoryControllers {
 
 	@RequestMapping(value = "/adjustmentsButton")
 	public String CallAdjustments() {
-		System.out.println("Adjustments Controller Called");
 		return "inventory/adjustments";
 	}
 	@RequestMapping(value = "/priceReviewButton")
@@ -46,4 +45,16 @@ public class InventoryControllers {
 	public String StockReturnedProducts() {
 		return "inventory/storeReturnedProducts";
 }
+	
+	@RequestMapping(value = "/indentProductsButton")
+	public String IndentProducts() {
+		return "inventory/indentProducts";
+}
+	@RequestMapping(value = "/indentsButton")
+	public String CallIndents() {
+		return "inventory/indents";
+}
+	
+	
+	
 }
