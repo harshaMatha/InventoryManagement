@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
    <head>
@@ -147,10 +148,20 @@
          <div class="list-group list-group-flush my-3">
             <button class="list-group-item list-group-item-action bg-transparent second-text active" onclick="Myfunction('wareHouseButton')">
             <span class="material-symbols-outlined">inventory</span>Warehouse Stock</button>
-            <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="indentsButton" onclick="Myfunction('createIndentButton')" >
-            <i><span class="material-symbols-outlined">
-            order_approve
-            </span></i> Create Indent</button>
+
+            <div class="dropdown">
+            <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold dropdown-toggle" role="button" id="indentsDropDownId" data-bs-toggle="dropdown" aria-expanded="false" >
+            
+                  <i><span class="material-symbols-outlined">
+                         order_approve
+                 </span></i>Indents</button>
+                   <ul class="dropdown-menu" aria-labelledby="indentsDropDownId">
+                      <li><button class="dropdown-item" onclick="Myfunction('indentsButton')">Indents List</button></li>
+                      <li><button class="dropdown-item" onclick="Myfunction('createIndentButton')">Create Indent</button></li>
+                   </ul>
+           </div>      
+            
+            
             <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold" id="adjustmentsButton" onclick="Myfunction('adjustmentsButton')">
             <span class="material-symbols-outlined">
             equalizer
