@@ -310,3 +310,63 @@ CONSTRAINT FK_P_ID
 FOREIGN KEY (Indents_Products_ID)
 REFERENCES im_Products(Product_ID)
 );
+--20-------------------------------Adjustments-----------------------------------
+create table im_adjustments(
+adjs_id int primary key,
+adjs_date date,
+adjs_desc varchar(100));
+--------------------------------Price Review------------------------------------
+create table im_priceReview(
+pr_id int primary key,
+pr_date date,
+pr_desc varchar(100));
+-21-----------------------------------Adjustment_Items--------------------------------
+create table im_adjustment_Items(
+adjs_id int,
+product_id int,
+current_stock int,
+updated_stock int,
+item_mode varchar(10),
+constraint fk_adjs_id Foreign key(adjs_id) references im_adjustments(adjs_id),
+constraint fk_adjs_p_id Foreign key(product_id) references im_products(product_id));
+-22----------------------------------------PriceReview_Items---------------------------
+create table im_priceReview_Items(
+pr_id int,
+product_id int,
+batch_No int,
+old_Price numeric ,
+new_price numeric,
+review_desc varchar(100),
+Primary key(pr_id,Product_ID,Batch_NO),
+constraint fk_pr_id Foreign key(pr_id) references im_priceReview(pr_id),
+constraint fk_pr_p_id Foreign key(product_id) references im_products(product_id)
+);
+
+--23. —---------------------------------StoreIssues ---------------------------------------
+create sequence im_storeIssue_Id
+start 4000
+increment 1;
+
+
+CREATE Table im_StoreIssues (
+StoreIssue_ID  int default nextval('im_storeIssue_id') PRIMARY KEY,
+StoreIssue_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+Amount numeric,
+StoreIssue_Status varchar(20),
+Last_updated_user varchar(20),
+Last_updated_date date
+);
+--24.—---------------------------------StoreIssues_Products ---------------------------------------
+CREATE Table im_StoreIssues_Products (
+StoreIssue_ID INT,
+Product_ID int,
+Quantity Int,
+PRIMARY KEY (StoreIssue_ID, Product_ID),
+CONSTRAINT FK_SI_ID
+FOREIGN KEY (StoreIssue_ID)
+REFERENCES im_StoreIssues(StoreIssue_ID) ,
+CONSTRAINT FK_P_ID
+FOREIGN KEY (Product_ID)
+REFERENCES im_Products(Product_ID)
+);
+---------------------------------------------------------------------------------------------------------------
