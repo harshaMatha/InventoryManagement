@@ -257,7 +257,7 @@ CREATE Table im_Stores(
 Store_ID int Primary key,
 Store_name varchar(20),
 Store_Address varchar(40),
-Store_Contact_Number int,
+Store_Contact_Number numeric(10),
 Status varchar(20) not null
 );
 
