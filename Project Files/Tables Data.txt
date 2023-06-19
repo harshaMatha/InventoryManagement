@@ -363,13 +363,39 @@ Last_updated_date date
 CREATE Table im_StoreIssues_Products (
 StoreIssue_ID INT,
 Product_ID int,
+batch_no int
 Quantity Int,
-PRIMARY KEY (StoreIssue_ID, Product_ID),
+PRIMARY KEY (StoreIssue_ID, Product_ID,batch_no),
 CONSTRAINT FK_SI_ID
 FOREIGN KEY (StoreIssue_ID)
 REFERENCES im_StoreIssues(StoreIssue_ID) ,
 CONSTRAINT FK_P_ID
-FOREIGN KEY (Product_ID)
-REFERENCES im_Products(Product_ID)
+FOREIGN KEY (Product_ID,batch_No)
+REFERENCES im_Products_stock(Product_ID,batch_no)
 );
----------------------------------------------------------------------------------------------------------------
+
+--25.—---------------------------------Store returns ---------------------------------------
+
+create sequence im_store_retrun_id
+start 15001
+increment 1;
+
+create table im_store_returns(
+	store_return_id int default nextval('im_store_retrun_id') primary key,
+	store_return_date timestamp,
+	StoreIssue_ID int,
+	CONSTRAINT FK_storeIssue_NO FOREIGN KEY (StoreIssue_ID) REFERENCES im_StoreIssues(StoreIssue_ID)	
+);
+
+--26.—---------------------------------Store return products ---------------------------------------
+
+create table im_store_returns_Products(
+	store_return_id int,
+	product_Id int,
+	batch_no int,
+	quantity int,
+	return_des varchar(100),
+	PRIMARY KEY (Store_return_ID, Product_ID,batch_no),
+	CONSTRAINT FK_Sri_ID FOREIGN KEY (Store_return_ID) REFERENCES im_Store_returns(Store_return_ID) ,
+	CONSTRAINT FK_P_ID FOREIGN KEY (Product_ID,batch_No) REFERENCES im_Products_stock(Product_ID,batch_no)
+);
