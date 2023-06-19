@@ -300,20 +300,27 @@ select 7004,62,1, 'Admin', CURRENT_DATE ;
 
 select * from im_purchase_return_products;
 
-INSERT INTO im_adjustments (adjs_id, adjs_date, adjs_desc)
-VALUES (4, '2023-06-04', 'Adjusting stock quantities for discontinued products');
+-- Inserting into im_adjustments table
+INSERT INTO im_adjustments (adjs_id, adjs_date)
+VALUES (1, '2023-05-15'),
+       (2, '2023-06-01'),
+       (3, '2023-06-10'),
+       (4, '2023-06-18'),
+       (5, '2023-06-20');
 
-INSERT INTO im_adjustments (adjs_id, adjs_date, adjs_desc)
-VALUES (5, '2023-06-05', 'Updating stock counts after a product recall');
+-- Inserting into im_adjustment_Items table
+INSERT INTO im_adjustment_Items (adjs_id, product_id, batch_no, current_stock, updated_stock, item_mode, adjs_desc)
+VALUES (1, 1, 1, 50, 40, 'Add', 'Adjusted stock down'),
+       (1, 13, 1, 30, 35, 'Add', 'Adjusted stock up'),
+       (2, 11, 1, 20, 10, 'Remove', 'Stock correction'),
+       (2, 2, 1, 40, 45, 'Add', 'Adjusted stock up'),
+       (3, 34, 1, 15, 20, 'Remove', 'Stock correction'),
+       (4, 22, 1, 20, 15, 'Remove', 'Stock correction'),
+       (4, 55, 1, 10, 8, 'Remove', 'Stock correction'),
+       (5, 63, 1, 30, 28, 'Remove', 'Stock correction'),
+       (5, 52, 1, 15, 20, 'Add', 'Adjusted stock up');
 
-INSERT INTO im_adjustments (adjs_id, adjs_date, adjs_desc)
-VALUES (6, '2023-06-06', 'Adjusting stock for damaged goods');
 
-INSERT INTO im_adjustments (adjs_id, adjs_date, adjs_desc)
-VALUES (7, '2023-06-07', 'Correcting stock discrepancies from a supplier error');
-
-INSERT INTO im_adjustments (adjs_id, adjs_date, adjs_desc)
-VALUES (8, '2023-06-08', 'Correcting wrong shipment quantities');
 ----------------------------------------------------------------------------------
 INSERT INTO im_priceReview (pr_id, pr_date, pr_desc)
 VALUES (4, '2023-06-04', 'Adjusting prices for seasonal items');
@@ -329,23 +336,7 @@ VALUES (7, '2023-06-07', 'Analyzing competitor pricing strategies');
 
 INSERT INTO im_priceReview (pr_id, pr_date, pr_desc)
 VALUES (8, '2023-06-08', 'Adjusting prices based on customer feedback');
----------------------------------------------------------------------------------------------
 
-
-INSERT INTO im_adjustment_Items (adjs_id, product_id, current_stock, updated_stock, item_mode)
-VALUES (5, 11, 50, 40, 'Add');
-
-INSERT INTO im_adjustment_Items (adjs_id, product_id, current_stock, updated_stock, item_mode)
-VALUES (4, 12, 100, 90, 'Remove');
-
-INSERT INTO im_adjustment_Items (adjs_id, product_id, current_stock, updated_stock, item_mode)
-VALUES (8, 13, 200, 220, 'Add');
-
-INSERT INTO im_adjustment_Items (adjs_id, product_id, current_stock, updated_stock, item_mode)
-VALUES (6, 4, 150, 140, 'Remove');
-
-INSERT INTO im_adjustment_Items (adjs_id, product_id, current_stock, updated_stock, item_mode)
-VALUES (4, 21, 80, 90, 'Add');
 -------------------------------------------------------------------------------------------------
 INSERT INTO im_priceReview_Items (pr_id, product_id, batch_No, old_Price, new_price, review_desc)
 VALUES (5, 11, 1, 9.99, 8.99, 'Reducing price for clearance');
