@@ -317,8 +317,7 @@ adjs_date date);
 --------------------------------Price Review------------------------------------
 create table im_priceReview(
 pr_id int primary key,
-pr_date date,
-pr_desc varchar(100));
+pr_date date);
 -21-----------------------------------Adjustment_Items--------------------------------
 create table im_adjustment_Items(
 adjs_id int,
@@ -328,6 +327,7 @@ current_stock int,
 updated_stock int,
 item_mode varchar(10),
 adjs_desc varchar(100),
+Primary key(adjs_id,product_id,batch_no),
 constraint fk_adjs_id Foreign key(adjs_id) references im_adjustments(adjs_id),
 constraint fk_adjs_p_id Foreign key(product_id,batch_no) references im_products_stock(product_id,batch_no)
 );
@@ -342,7 +342,7 @@ new_price numeric,
 review_desc varchar(100),
 Primary key(pr_id,Product_ID,Batch_NO),
 constraint fk_pr_id Foreign key(pr_id) references im_priceReview(pr_id),
-constraint fk_pr_p_id Foreign key(product_id) references im_products(product_id)
+constraint fk_pr_p_id Foreign key(product_id, batch_no) references im_products_stock(product_id, batch_no)
 );
 
 --23. —---------------------------------StoreIssues ---------------------------------------
