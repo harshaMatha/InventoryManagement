@@ -312,7 +312,7 @@ REFERENCES im_Products(Product_ID)
 );
 --20-------------------------------Adjustments-----------------------------------
 create table im_adjustments(
-adjs_id int primary key,
+adjs_id serial primary key,
 adjs_date date);
 --------------------------------Price Review------------------------------------
 create table im_priceReview(
