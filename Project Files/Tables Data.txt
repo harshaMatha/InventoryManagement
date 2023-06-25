@@ -223,9 +223,8 @@ FOREIGN KEY (Product_ID)
 REFERENCES im_Products(Product_ID)
 );
 
---14.----
 
---15.—---------------------------------Users ---------------------------------------
+--14.—---------------------------------Users ---------------------------------------
 
 CREATE Table im_Users (
 User_ID varchar(30) Primary Key NOT NULL,
@@ -238,7 +237,7 @@ Otp_expiry_time date
 );
 
 
---16.—---------------------------------Stores ---------------------------------------
+--15.—---------------------------------Stores ---------------------------------------
 
 CREATE Table im_Stores(
 Store_ID int Primary key,
@@ -248,7 +247,7 @@ Store_Contact_Number numeric(10),
 Status varchar(20) not null
 );
 
---17.—--------------------------------- Store Users ---------------------------------------
+--16.—--------------------------------- Store Users ---------------------------------------
 
 CREATE Table im_Store_Users (
 User_ID varchar(30) Primary Key NOT NULL,
@@ -265,7 +264,7 @@ REFERENCES im_stores(Store_ID)
 );
 
 
---18.—--------------------------------- Store Indents ---------------------------------------
+--17.—--------------------------------- Store Indents ---------------------------------------
 
 create sequence im_Store_Indents_id
 start 2501
@@ -282,7 +281,7 @@ Last_Updated_Date date
 );
 
 
---19.—------------------------------------- Store Indent Products---------------------------------------
+--18.—------------------------------------- Store Indent Products---------------------------------------
 
 
 CREATE Table im_Store_Indents_Products (
@@ -297,11 +296,11 @@ CONSTRAINT FK_P_ID
 FOREIGN KEY (Indents_Products_ID)
 REFERENCES im_Products(Product_ID)
 );
---20-------------------------------Adjustments-----------------------------------
+--19-------------------------------Adjustments-----------------------------------
 create table im_adjustments(
 adjs_id serial primary key,
 adjs_date date);
---------------------------------Price Review------------------------------------
+--20------------------------------Price Review------------------------------------
 create table im_priceReview(
 pr_id int primary key,
 pr_date date);
