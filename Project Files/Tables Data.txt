@@ -15,7 +15,9 @@ CREATE Table im_Products_Category (
  
 
 --3.—---------------------------------Products —---------------------------------------------------
- CREATE Table im_Products( 
+
+
+CREATE Table im_Products( 
      Product_ID serial PRIMARY KEY,
      Product_Name Varchar(30),
      Product_Image Varchar,
@@ -223,8 +225,9 @@ FOREIGN KEY (Product_ID)
 REFERENCES im_Products(Product_ID)
 );
 
+--14.----
 
---14.—---------------------------------Users ---------------------------------------
+--15.—---------------------------------Users ---------------------------------------
 
 CREATE Table im_Users (
 User_ID varchar(30) Primary Key NOT NULL,
@@ -237,7 +240,7 @@ Otp_expiry_time date
 );
 
 
---15.—---------------------------------Stores ---------------------------------------
+--16.—---------------------------------Stores ---------------------------------------
 
 CREATE Table im_Stores(
 Store_ID int Primary key,
@@ -247,7 +250,7 @@ Store_Contact_Number numeric(10),
 Status varchar(20) not null
 );
 
---16.—--------------------------------- Store Users ---------------------------------------
+--17.—--------------------------------- Store Users ---------------------------------------
 
 CREATE Table im_Store_Users (
 User_ID varchar(30) Primary Key NOT NULL,
@@ -264,7 +267,7 @@ REFERENCES im_stores(Store_ID)
 );
 
 
---17.—--------------------------------- Store Indents ---------------------------------------
+--18.—--------------------------------- Store Indents ---------------------------------------
 
 create sequence im_Store_Indents_id
 start 2501
@@ -281,7 +284,7 @@ Last_Updated_Date date
 );
 
 
---18.—------------------------------------- Store Indent Products---------------------------------------
+--19.—------------------------------------- Store Indent Products---------------------------------------
 
 
 CREATE Table im_Store_Indents_Products (
@@ -296,15 +299,15 @@ CONSTRAINT FK_P_ID
 FOREIGN KEY (Indents_Products_ID)
 REFERENCES im_Products(Product_ID)
 );
---19-------------------------------Adjustments-----------------------------------
+--20-------------------------------Adjustments-----------------------------------
 create table im_adjustments(
 adjs_id serial primary key,
 adjs_date date);
---20------------------------------Price Review------------------------------------
+--------------------------------Price Review------------------------------------
 create table im_priceReview(
 pr_id int primary key,
 pr_date date);
--21-----------------------------------Adjustment_Items--------------------------------
+--21-----------------------------------Adjustment_Items--------------------------------
 create table im_adjustment_Items(
 adjs_id int,
 product_id int,
@@ -318,7 +321,7 @@ constraint fk_adjs_id Foreign key(adjs_id) references im_adjustments(adjs_id),
 constraint fk_adjs_p_id Foreign key(product_id,batch_no) references im_products_stock(product_id,batch_no)
 );
 
--22----------------------------------------PriceReview_Items---------------------------
+--22----------------------------------------PriceReview_Items---------------------------
 create table im_priceReview_Items(
 pr_id int,
 product_id int,
@@ -350,7 +353,7 @@ Last_updated_date date
 CREATE Table im_StoreIssues_Products (
 StoreIssue_ID INT,
 Product_ID int,
-batch_no int
+batch_no int,
 Quantity Int,
 PRIMARY KEY (StoreIssue_ID, Product_ID,batch_no),
 CONSTRAINT FK_SI_ID
