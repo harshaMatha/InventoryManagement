@@ -230,7 +230,7 @@ CREATE Table im_Users (
 User_ID varchar(30) Primary Key NOT NULL,
 User_Name varchar(50) NOT NULL,
 User_Password varchar(10) NOT NULL,
-User_type varchar(10) NOT NULL,
+User_type varchar(20) NOT NULL,
 Status varchar(20) NOT NULL,
 Otp int,
 Otp_expiry_time date
