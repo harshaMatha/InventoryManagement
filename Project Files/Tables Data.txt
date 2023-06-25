@@ -26,6 +26,7 @@ CREATE Table im_Products_Category (
      Product_Reorder_Level int, 
      Ecommerce_Reorder_Level int, 
      Product_Status varchar(20), 
+     Profit_percentage numeric(4,2),
      Last_Updated_User varchar(20), 
      Last_Updated_Date date, 
      CONSTRAINT FK_ProdCtg FOREIGN KEY (Product_Category_ID) REFERENCES im_Products_Category(Product_Category_ID),
@@ -159,7 +160,10 @@ GRN_ID int,
 Product_ID Int,
 Batch_NO int,
 Quantity Int,
-Price numeric,
+total_Price numeric,
+cgst numeric(4,2),
+sgst numeric(4,2),
+igst numeric(4,2),
 hsn_code int,
 Bonus Int,
 Last_Updated_User varchar(20),
@@ -219,24 +223,7 @@ FOREIGN KEY (Product_ID)
 REFERENCES im_Products(Product_ID)
 );
 
---14.—---------------------------------CustomSet_Products---------------------------------------
-
-
-CREATE table im_CustomSet_Products(
-Custom_Product_ID Int,
-Sub_Product_ID Int,
-quantity int,
-Last_Updated_User varchar(20),
-Last_Updated_Date date,
-PRIMARY KEY (Custom_Product_ID, Sub_Product_ID),
-CONSTRAINT FK_P_ID
-FOREIGN KEY (Custom_Product_ID)
-REFERENCES im_Products(Product_ID) ,
-CONSTRAINT FK_S_P_ID
-FOREIGN KEY (Sub_Product_ID)
-REFERENCES im_Products(Product_ID)
-);
-
+--14.----
 
 --15.—---------------------------------Users ---------------------------------------
 
@@ -355,6 +342,7 @@ CREATE Table im_StoreIssues (
 StoreIssue_ID  int default nextval('im_storeIssue_id') PRIMARY KEY,
 StoreIssue_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 Amount numeric,
+store_Id int,
 StoreIssue_Status varchar(20),
 Last_updated_user varchar(20),
 Last_updated_date date
